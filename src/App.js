@@ -7,6 +7,7 @@ import Social from "./pages/Social";
 import Products from "./pages/Products";
 import Quality from "./pages/Quality";
 import Login from "./pages/Login";
+import Footer from "./components/Footer"
 
 const App = () => (
   <Router>
@@ -20,6 +21,8 @@ const App = () => (
       <Route path="/quality" element={<Quality />} />
       <Route path="/login" element={<Login />} />
     </Routes>
+    <Footer />
+
   </Router>
 );
 
