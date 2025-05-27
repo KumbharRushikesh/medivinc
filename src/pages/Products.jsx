@@ -1,18 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-
-const SectionWrapper = ({ title, children }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }} 
-    animate={{ opacity: 1, y: 0 }} 
-    transition={{ duration: 0.6 }} 
-    className="max-w-10xl mx-auto px-6 py-16 bg-white rounded-2xl shadow-lg my-6"
-  >
-    <h2 className="text-5xl font-extrabold text-blue-900 mb-10 border-l-8 border-blue-600 pl-4 font-serif">{title}</h2>
-    <div className="text-gray-800 leading-relaxed text-lg space-y-6 font-light">{children}</div>
-  </motion.div>
-);
-
+import banneImg from "../Images/productbaner.png"
+import SectionWrapper from "../components/SectionWrapper";
 const ProductCard = ({ name }) => (
   <motion.div 
     whileHover={{ scale: 1.05 }} 
@@ -48,6 +37,19 @@ const Products = () => {
 
   return (
     <SectionWrapper title="Our Products">
+      <div
+      className="relative w-full h-[800px] bg-cover bg-center flex items-end px-6 pb-6"
+      style={{
+        backgroundImage: `url(${banneImg})`
+      }}
+    >
+      <div className="bg-white bg-opacity-90 px-8 py-4 rounded-md max-w-[90%]">
+        <h1 className="text-4xl sm:text-5xl font-bold uppercase text-orange-600">
+          Key Therapies
+        </h1>
+      </div>
+    </div>
+
       <div className="mb-6">
         <input
           placeholder="Search products..."
