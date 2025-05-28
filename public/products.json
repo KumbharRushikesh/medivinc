@@ -1,0 +1,16 @@
+{
+  "section1": [
+    { "brand": "Brand A1", "description": "Desc A1", "division": "Division A" },
+    { "brand": "Brand A2", "description": "Desc A2", "division": "Division A" }
+  ],
+  "section2": [
+    { "brand": "Brand B1", "description": "Desc B1", "division": "Division B" },
+    { "brand": "Brand B2", "description": "Desc B2", "division": "Division B" }
+  ],
+  "section3": [
+    { "brand": "Brand C1", "description": "Desc C1", "division": "Division C" }
+  ],
+  "section4": [
+    { "brand": "Brand D1", "description": "Desc D1", "division": "Division D" }
+  ]
+}
