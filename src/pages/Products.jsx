@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import banneImg from "../Images/productbaner.png";
 import SectionWrapper from "../components/SectionWrapper";
+import gynacImg from "../Images/gynac.jpg";
+import pediatricsImg from "../Images/pediatrics.jpg";
+import orthoImg from "../Images/ortho.jpg";
+
 
 const Products = () => {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -108,9 +112,10 @@ const Products = () => {
   const sections = [
     {
       key: "section1",
-      title: "Women's Health",
-      info: "Focused on gynecological and hormonal therapies for women's well-being.",
-      image: "/Images/section1.jpg",
+      title: "Gynac Range",
+      info: "Improving lives is at the heart of MediVinc's mission. Access to gynecologists can be challenging for women in many rural areas. Governments and NGOs need to increase the availability of gynecologists and organize health camps to each these women."+
+      " In essence, gynecologists empower women by providing health information, enabling them to make informed decisions, and offering essential medical services. This strengthens their physical and mental health, which is a crucial component of women's empowerment.",
+      image: `${gynacImg}`,
       bg: "bg-blue-100",
       btn: "bg-[#374151] text-white",
       imageLeft: true,
@@ -119,7 +124,7 @@ const Products = () => {
       key: "section2",
       title: "Pain Management",
       info: "Therapies for joint pain, muscular discomfort, and neuropathy relief.",
-      image: "/Images/section2.jpg",
+      image: `${pediatricsImg}`,
        bg: "bg-blue-100",
       btn: "bg-[#374151] text-white",
       imageLeft: false,
@@ -128,7 +133,7 @@ const Products = () => {
       key: "section3",
       title: "Metabolic Disorders",
       info: "Treatments related to diabetes, thyroid, and other metabolic syndromes.",
-      image: "/Images/section3.jpg",
+      image: `${orthoImg}`,
       bg: "bg-blue-100",
       btn: "bg-[#374151] text-white",
       imageLeft: true,
@@ -137,10 +142,19 @@ const Products = () => {
       key: "section4",
       title: "Gastro Care",
       info: "Products for gut health, acidity, and digestion-related issues.",
-      image: "/Images/section4.jpg",
+      image: `${orthoImg}`,
        bg: "bg-blue-100",
       btn: "bg-[#374151] text-white",
       imageLeft: false,
+    },
+    {
+      key: "section5",
+      title: "Genral Disorders",
+      info: "Treatments related to diabetes, thyroid, and other metabolic syndromes.",
+      image: `${orthoImg}`,
+      bg: "bg-blue-100",
+      btn: "bg-[#374151] text-white",
+      imageLeft: true,
     },
   ];
 

@@ -1,7 +1,15 @@
 {
   "section1": [
-    { "brand": "Brand A1", "description": "Desc A1", "division": "Division A" },
-    { "brand": "Brand A2", "description": "Desc A2", "division": "Division A" }
+    { "brand": "Medfol Tablets", "description": "L-METHYLFOLATE 1 MG + METHYLCOBALAMIN 1500 MCG + PYRIDOXOL 5 PHOSPATE 0.5 MG", "division": "Gynac Range" },
+    { "brand": "CAL MVH PLUS Tablets", "description": "CALCIUM CARBONATE 1250 MG + METHYLCOBALAMIN 1500 MCG + L METHYLFOLATE 1 MG + PYRIDOXOL 5 PHOSPATE 0.5 MG + VITD 3 2000 IU", "division": "Gynac Range" },
+    { "brand": "Dydrovinc Tablets", "description": "DYDROGESTRONE 10 MG", "division": "Gynac Range" },
+    { "brand": "Met-Pco Tablets", "description": "METFORMIN HYDROCLORIDE 500 MG + MYO INOSITOL 550 + D-CHIRO INOSITOL 13.8 MG + L METHYLFOLATE 0.5 MG + MECOBALAMIN 750MCG", "division": "Gynac Range" },
+    { "brand": "MED-M-FORTE Tablet", "description": "COQ10 200MG + ASTAZANTIN 16 MG + CELENIUM 30 MCG + ZINK 17 MG", "division": "Gynac Range" },
+    { "brand": "MED-F-FORTE Tablets", "description": "MYO INOSITOL 550 + D-CHIRO INOSITOL 36.2 + N ACETYLCYSTEINE 300MHG + BIOTIN 30 MCG + LYCOPENE 5MG + CHROMIUM 50 MCG + FOLIC ACID 120MCG + VIT D 3 400 IU", "division": "Gynac Range" },
+    { "brand": "LETMED Tablets", "description": "LETROZOLE 5MG", "division": "Gynac Range" },
+    { "brand": "Argiplus Sachet", "description": "L ARGNINE SACHET 5 MG SR", "division": "Gynac Range" },
+    { "brand": "VINCBACT Capsules", "description": "PRE PRO BIOTIC", "division": "Gynac Range" },
+    { "brand": "ONDIBRU MD 4 Tablets", "description": "ONDESTRON 4 MG MOUTH DISSOLVING ", "division": "Gynac Range" }
   ],
   "section2": [
     { "brand": "Brand B1", "description": "Desc B1", "division": "Division B" },
@@ -11,6 +19,9 @@
     { "brand": "Brand C1", "description": "Desc C1", "division": "Division C" }
   ],
   "section4": [
+    { "brand": "Brand D1", "description": "Desc D1", "division": "Division D" }
+  ],
+  "section5": [
     { "brand": "Brand D1", "description": "Desc D1", "division": "Division D" }
   ]
 }
