@@ -6,12 +6,14 @@ import pediatricsImg from "../Images/pediatrics.jpg";
 import orthoImg from "../Images/ortho.jpg";
 import InjectableImg from "../Images/Injectable.jpg";
 import GeneralImg from "../Images/genral.jpg";
+
 const Products = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [productData, setProductData] = useState({});
   const [visibleTables, setVisibleTables] = useState({});
   const [searchQueries, setSearchQueries] = useState({});
   const [currentPages, setCurrentPages] = useState({});
+  
 
   const itemsPerPage = 5;
 
@@ -73,12 +75,12 @@ const Products = () => {
         />
         <div className="overflow-x-auto">
           <table className="w-full border-collapse border border-gray-300 text-sm">
-            <thead className="bg-gray-100">
+            <thead className="bg-cyan-600 text-white">
               <tr>
-                <th className="border border-gray-300 p-2">#</th>
-                <th className="border border-gray-300 p-2">Brand Name</th>
-                <th className="border border-gray-300 p-2">Description</th>
-                <th className="border border-gray-300 p-2">Division</th>
+                <th className="border border-gray-300 p-2 text-white">#</th>
+                <th className="border border-gray-300 p-2 text-white">Brand Name</th>
+                <th className="border border-gray-300 p-2 text-white">Description</th>
+                <th className="border border-gray-300 p-2 text-white">Division</th>
               </tr>
             </thead>
             <tbody>
@@ -101,7 +103,7 @@ const Products = () => {
             <button
               key={idx}
               onClick={() => handlePageChange(key, idx + 1)}
-              className={`px-3 py-1 m-1 rounded bg-red-200`}
+              className={`px-3 py-1 m-1 bg-cyan-600 rounded text-white`}
             >
               {idx + 1}
             </button>
@@ -169,14 +171,14 @@ const Products = () => {
       >
         <div className="bg-white bg-opacity-90 px-4 sm:px-8 py-4 rounded-md max-w-full sm:max-w-[90%]">
           <h1 className="text-3xl sm:text-5xl font-bold uppercase text-orange-600">
-            Key Therapies
+            Key Products
           </h1>
         </div>
       </div>
 
       <div className="p-4 sm:p-6 space-y-10">
         {sections.map(({ key, title, info, image, bg, btn, imageLeft }) => (
-          <div key={key} className={`border p-4 rounded shadow-md ${bg}`}>
+          <div key={key} className={`border p-4 rounded shadow-md w-full md:w-[80%] md:mx-auto ${bg}`}>
             <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
               {imageLeft ? (
                 <>
@@ -211,9 +213,11 @@ const Products = () => {
 
             <button
               onClick={() => toggleTable(key)}
-              className={`mt-6 w-full py-2 px-4 rounded hover:opacity-90 ${btn}`}
-            >
-              + Product List
+              className={`mt-6 w-full py-2 px-4 rounded hover:opacity-90 transition-colors duration-300 ${
+    visibleTables[key] ? 'bg-cyan-600 text-white' : btn
+  }`}
+>
+  {visibleTables[key] ? '- Product List' : '+ Product List'}
             </button>
 
             {visibleTables[key] && renderTable(key)}

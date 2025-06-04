@@ -5,6 +5,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
+  const [productOpen, setproductOpen] = useState(false);
 
   useEffect(() => {
     const loggedIn = localStorage.getItem("isAdmin") === "true";
@@ -20,6 +21,7 @@ const Navbar = () => {
   const closeMobileMenu = () => {
     setMenuOpen(false);
     setAboutOpen(false);
+    setproductOpen(false);
   };
 
   return (
@@ -77,10 +79,37 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Link className="hover:text-blue-800" to="/vision" onClick={closeMobileMenu}>Vision & Mission</Link>
-          <Link className="hover:text-blue-800" to="/social" onClick={closeMobileMenu}>Social Activities</Link>
-          <Link className="hover:text-blue-800" to="/products" onClick={closeMobileMenu}>Products</Link>
-          <Link className="hover:text-blue-800" to="/quality" onClick={closeMobileMenu}>Quality</Link>
+
+          {/* Product with submenu */}
+
+          <div className="relative group">
+             <button
+              onClick={() => {
+                if (window.innerWidth < 768) {
+                  setproductOpen(!productOpen);
+                }
+              }}
+              className="hover:text-blue-800 flex items-center focus:outline-none"
+            >
+              Products
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div
+              className={`${
+                productOpen ? "block" : "hidden"
+              } md:group-hover:block md:absolute md:top-full md:left-0 bg-white md:min-w-[10rem] rounded-md mt-2 md:mt-0 shadow-md z-40`}
+              onClick={closeMobileMenu}
+            >
+              <Link to="/products" className="block px-4 py-2 hover:bg-gray-100">Prime Products</Link>
+              <Link to="/Allproducts" className="block px-4 py-2 hover:bg-gray-100">Products</Link>
+
+            </div>
+
+          </div>
+
+          <Link className="hover:text-blue-800" to="/about#Vision-Mission" onClick={closeMobileMenu}>Vision & Mission</Link>
 
           {isAdmin ? (
             <button onClick={handleLogout} className="hover:text-red-600 text-left">Logout</button>

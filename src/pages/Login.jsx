@@ -16,7 +16,7 @@ const Login = () => {
   const handleLogin = () => {
     if (email === adminCredentials.email && password === adminCredentials.password) {
       localStorage.setItem("isAdmin", "true");
-      navigate("/products");
+      navigate("/Allproducts");
     } else {
       setError("Invalid credentials");
     }
