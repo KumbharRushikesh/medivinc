@@ -55,7 +55,7 @@ const Navbar = () => {
               }}
               className="hover:text-blue-800 flex items-center focus:outline-none"
             >
-              About Us
+              About
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
@@ -68,9 +68,12 @@ const Navbar = () => {
               } md:group-hover:block md:absolute md:top-full md:left-0 bg-white md:min-w-[10rem] rounded-md mt-2 md:mt-0 shadow-md z-40`}
               onClick={closeMobileMenu}
             >
-              <Link to="/team" className="block px-4 py-2 hover:bg-gray-100">Our Team</Link>
-              <Link to="/history" className="block px-4 py-2 hover:bg-gray-100">Our History</Link>
-              <Link to="/careers" className="block px-4 py-2 hover:bg-gray-100">Careers</Link>
+              <Link to="/about" className="block px-4 py-2 hover:bg-gray-100">About Us</Link>
+              <Link to="/about#aboutcompany" className="block px-4 py-2 hover:bg-gray-100">Company Info</Link>
+              <Link to="/about#Vision-Mission" className="block px-4 py-2 hover:bg-gray-100">Vision & Mission</Link>
+              <Link to="/about#history" className="block px-4 py-2 hover:bg-gray-100">Our History</Link>
+              <Link to="/about#Strength" className="block px-4 py-2 hover:bg-gray-100">Our Strength</Link>
+              <Link to="/about#Values" className="block px-4 py-2 hover:bg-gray-100">Our Core Values</Link>
             </div>
           </div>
 

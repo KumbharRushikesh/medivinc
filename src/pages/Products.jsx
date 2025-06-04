@@ -4,8 +4,8 @@ import SectionWrapper from "../components/SectionWrapper";
 import gynacImg from "../Images/gynac.jpg";
 import pediatricsImg from "../Images/pediatrics.jpg";
 import orthoImg from "../Images/ortho.jpg";
-
-
+import InjectableImg from "../Images/Injectable.jpg";
+import GeneralImg from "../Images/genral.jpg";
 const Products = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const [productData, setProductData] = useState({});
@@ -71,35 +71,37 @@ const Products = () => {
           placeholder="Search by brand"
           className="mb-2 p-2 w-full border border-gray-300 rounded"
         />
-        <table className="w-full border-collapse border border-gray-300">
-          <thead className="bg-gray-100">
-            <tr>
-              <th className="border border-gray-300 p-2">#</th>
-              <th className="border border-gray-300 p-2">Brand Name</th>
-              <th className="border border-gray-300 p-2">Description</th>
-              <th className="border border-gray-300 p-2">Division</th>
-            </tr>
-          </thead>
-          <tbody>
-            {paginated.map((item, index) => (
-              <tr key={index}>
-                <td className="border border-gray-300 p-2">
-                  {(page - 1) * itemsPerPage + index + 1}
-                </td>
-                <td className="border border-gray-300 p-2">{item.brand}</td>
-                <td className="border border-gray-300 p-2">{item.description}</td>
-                <td className="border border-gray-300 p-2">{item.division}</td>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse border border-gray-300 text-sm">
+            <thead className="bg-gray-100">
+              <tr>
+                <th className="border border-gray-300 p-2">#</th>
+                <th className="border border-gray-300 p-2">Brand Name</th>
+                <th className="border border-gray-300 p-2">Description</th>
+                <th className="border border-gray-300 p-2">Division</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {paginated.map((item, index) => (
+                <tr key={index}>
+                  <td className="border border-gray-300 p-2">
+                    {(page - 1) * itemsPerPage + index + 1}
+                  </td>
+                  <td className="border border-gray-300 p-2">{item.brand}</td>
+                  <td className="border border-gray-300 p-2">{item.description}</td>
+                  <td className="border border-gray-300 p-2">{item.division}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-        <div className="text-center mt-2">
+        <div className="text-center mt-2 flex flex-wrap justify-center">
           {Array.from({ length: totalPages }, (_, idx) => (
             <button
               key={idx}
               onClick={() => handlePageChange(key, idx + 1)}
-              className={`px-3 py-1 m-1 rounded "bg-red-200"`}
+              className={`px-3 py-1 m-1 rounded bg-red-200`}
             >
               {idx + 1}
             </button>
@@ -113,8 +115,9 @@ const Products = () => {
     {
       key: "section1",
       title: "Gynac Range",
-      info: "Improving lives is at the heart of MediVinc's mission. Access to gynecologists can be challenging for women in many rural areas. Governments and NGOs need to increase the availability of gynecologists and organize health camps to each these women."+
-      " In essence, gynecologists empower women by providing health information, enabling them to make informed decisions, and offering essential medical services. This strengthens their physical and mental health, which is a crucial component of women's empowerment.",
+      info:
+        "Improving lives is at the heart of MediVinc's mission. Access to gynecologists can be challenging for women in many rural areas. Governments and NGOs need to increase the availability of gynecologists and organize health camps to each these women." +
+        " In essence, gynecologists empower women by providing health information, enabling them to make informed decisions, and offering essential medical services. This strengthens their physical and mental health, which is a crucial component of women's empowerment.",
       image: `${gynacImg}`,
       bg: "bg-blue-100",
       btn: "bg-[#374151] text-white",
@@ -122,17 +125,17 @@ const Products = () => {
     },
     {
       key: "section2",
-      title: "Pain Management",
-      info: "Therapies for joint pain, muscular discomfort, and neuropathy relief.",
+      title: "Pediatrics Range",
+      info: "MediVinc strives to make a positive impact on people's lives. Pediatrics is about so much more than just diagnosing and treating illnesses. It's about investing in the future, building strong foundations for lifelong health and happiness. The first years of life are crucial, and we have a responsibility to ensure that children receive the best possible  are. From healthy growth and development to preventative measures and early intervention, our goal is to empower families and equip them with the knowledge and resources they need to thrive. Let's work together to create a healthier world for our children.",
       image: `${pediatricsImg}`,
-       bg: "bg-blue-100",
+      bg: "bg-blue-100",
       btn: "bg-[#374151] text-white",
       imageLeft: false,
     },
     {
       key: "section3",
-      title: "Metabolic Disorders",
-      info: "Treatments related to diabetes, thyroid, and other metabolic syndromes.",
+      title: "Ortho Range",
+      info: "MediVinc is passionate about transforming lives for the better. MediVinc's Ortho role in bone health and fracture healing MediVinc Product's contributes to bone health, helps reduce pain caused by fractures, and aids in the healing process",
       image: `${orthoImg}`,
       bg: "bg-blue-100",
       btn: "bg-[#374151] text-white",
@@ -140,18 +143,18 @@ const Products = () => {
     },
     {
       key: "section4",
-      title: "Gastro Care",
-      info: "Products for gut health, acidity, and digestion-related issues.",
-      image: `${orthoImg}`,
-       bg: "bg-blue-100",
+      title: "Injectable Range",
+      info: "MediVinc's purpose is to advance health and wellness for all. Inject able medicines are used for various reasons, including quick absorption into the bloodstream, when oral medication is not feasible, or for targeted delivery to specific areas of the body. Benefits include rapid effects, delivery of large doses, and avoiding the first-pass metabolism that can occur with oral medications.",
+      image: `${InjectableImg}`,
+      bg: "bg-blue-100",
       btn: "bg-[#374151] text-white",
       imageLeft: false,
     },
     {
       key: "section5",
-      title: "Genral Disorders",
-      info: "Treatments related to diabetes, thyroid, and other metabolic syndromes.",
-      image: `${orthoImg}`,
+      title: "General Range",
+      info: "MediVinc is dedicated to enhancing human well-being. General medicine offers numerous benefits, including preventing diseases, treating illnesses, managing chronic conditions, and improving overall health and well-being. It also plays a crucial role in early detection of diseases and providing preventive care, which can lead to a longer and healthier life",
+      image: `${GeneralImg}`,
       bg: "bg-blue-100",
       btn: "bg-[#374151] text-white",
       imageLeft: true,
@@ -161,44 +164,41 @@ const Products = () => {
   return (
     <SectionWrapper title="Our Products">
       <div
-        className="relative w-full h-[800px] bg-cover bg-center flex items-end px-6 pb-6"
-        style={{
-          backgroundImage: `url(${banneImg})`,
-        }}
+        className="relative w-full h-[500px] sm:h-[800px] bg-cover bg-center flex items-end px-6 pb-6"
+        style={{ backgroundImage: `url(${banneImg})` }}
       >
-        <div className="bg-white bg-opacity-90 px-8 py-4 rounded-md max-w-[90%]">
-          <h1 className="text-4xl sm:text-5xl font-bold uppercase text-orange-600">
+        <div className="bg-white bg-opacity-90 px-4 sm:px-8 py-4 rounded-md max-w-full sm:max-w-[90%]">
+          <h1 className="text-3xl sm:text-5xl font-bold uppercase text-orange-600">
             Key Therapies
           </h1>
         </div>
       </div>
 
-      <div className="p-6 space-y-10">
+      <div className="p-4 sm:p-6 space-y-10">
         {sections.map(({ key, title, info, image, bg, btn, imageLeft }) => (
           <div key={key} className={`border p-4 rounded shadow-md ${bg}`}>
-            {/* Flex row with image and info */}
-            <div className="flex flex-col md:flex-row items-center">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
               {imageLeft ? (
                 <>
-                  <div className="flex-shrink-0 md:w-[35%] max-w-xs w-full">
+                  <div className="w-full md:w-1/3">
                     <img
                       src={image}
                       alt={title}
                       className="rounded object-cover w-full h-48 md:h-56"
                     />
                   </div>
-                  <div className="md:ml-6 w-full md:w-[65%] text-left mt-4 md:mt-0">
-                    <h2 className="text-2xl font-semibold mb-2">{title}</h2>
-                    <p className="mb-4">{info}</p>
+                  <div className="w-full md:w-2/3 text-left">
+                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">{title}</h2>
+                    <p className="text-sm sm:text-base mb-4">{info}</p>
                   </div>
                 </>
               ) : (
                 <>
-                  <div className="md:mr-6 w-full md:w-[65%] text-left order-2 md:order-1">
-                    <h2 className="text-2xl font-semibold mb-2">{title}</h2>
-                    <p className="mb-4">{info}</p>
+                  <div className="w-full md:w-2/3 text-left">
+                    <h2 className="text-xl sm:text-2xl font-semibold mb-2">{title}</h2>
+                    <p className="text-sm sm:text-base mb-4">{info}</p>
                   </div>
-                  <div className="flex-shrink-0 md:w-[35%] max-w-xs w-full order-1 md:order-2">
+                  <div className="w-full md:w-1/3">
                     <img
                       src={image}
                       alt={title}
@@ -209,7 +209,6 @@ const Products = () => {
               )}
             </div>
 
-            {/* Full width button */}
             <button
               onClick={() => toggleTable(key)}
               className={`mt-6 w-full py-2 px-4 rounded hover:opacity-90 ${btn}`}
@@ -217,11 +216,9 @@ const Products = () => {
               + Product List
             </button>
 
-            {/* Full width table */}
             {visibleTables[key] && renderTable(key)}
           </div>
         ))}
-
       </div>
     </SectionWrapper>
   );

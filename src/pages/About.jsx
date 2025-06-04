@@ -6,6 +6,8 @@ import { Eye, Target, Stethoscope, Pill, Network } from 'lucide-react';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import SectionWrapper from "../components/SectionWrapper";
 
@@ -57,6 +59,17 @@ const About = () => {
     { year: "2030", icon: "\u{1F91D}", description: "Adapt it to your needs and capture your audience's attention.", isUp: false },
     { year: "2040", icon: "\u2699\uFE0F", description: "Adapt it to your needs and capture your audience's attention.", isUp: false },
   ];
+
+  const location = useLocation();
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [location]);
+
   return (
     <SectionWrapper title="About Us">
       <Swiper
@@ -111,7 +124,10 @@ const About = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <div className="bg-white rounded-lg shadow-lg p-6 mt-10 flex flex-col md:flex-row items-start gap-6 font-sans">
+      <div
+  id="aboutcompany"
+  className="scroll-mt-24 bg-white rounded-lg shadow-lg p-6 mt-10 flex flex-col md:flex-row items-start gap-6 font-sans"
+>
         {/* Image on the left */}
         <div className="w-full md:w-1/2">
           <img
@@ -136,7 +152,7 @@ const About = () => {
       </div>
 
  
-    <div className="bg-black text-white px-6 py-12 md:px-20 flex">
+    <div id="Vision-Mission" className="scroll-mt-24 bg-black text-white px-6 py-12 md:px-20 flex">
       <div className="grid md:grid-cols-2 gap-8">
         {/* Vision - Top Left */}
         <div className="flex flex-col space-y-3">
@@ -164,7 +180,7 @@ const About = () => {
       </div>
     </div>
 
-   <div className="bg-white rounded-lg shadow-lg p-6 mt-10 gap-6 font-sans">
+   <div id="history" className="scroll-mt-24 bg-white rounded-lg shadow-lg p-6 mt-10 gap-6 font-sans">
 
       <motion.h2 
         initial={{ opacity: 0, y: -40 }} 
@@ -183,7 +199,7 @@ const About = () => {
 
     </div>
 
-    <div className="mt-10 bg-gradient-to-r from-cyan-100 via-white to-cyan-100 py-16">
+    <div id="Strength" className="scroll-mt-24 mt-10 bg-gradient-to-r from-cyan-100 via-white to-cyan-100 py-16">
         <h2 className="text-center text-3xl font-bold mb-12 text-cyan-800">Medivinc Strength In Numbers</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-10 md:px-20 text-center">
           <StatsBlock icon={Stethoscope} number="4" label="Divisions" delay={0.2} />
@@ -201,7 +217,7 @@ const About = () => {
   transition={{ duration: 0.8 }}
   className="py-16 px-6 md:px-20 bg-white text-center"
 >
-  <h2 className="text-3xl font-bold text-cyan-700 mb-12">Our Core Values</h2>
+  <h2 id="Values" className="text-3xl font-bold text-cyan-700 mb-12">Our Core Values</h2>
   <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
     <motion.div
       whileHover={{ scale: 1.05 }}
