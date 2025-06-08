@@ -16,3 +16,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply opacity-0 transition-opacity duration-300;
+}
+
+.group:hover .swiper-button-prev,
+.group:hover .swiper-button-next {
+  @apply opacity-100;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: white;
+  font-size: 1.5rem;
+}

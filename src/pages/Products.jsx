@@ -6,6 +6,8 @@ import pediatricsImg from "../Images/pediatrics.jpg";
 import orthoImg from "../Images/ortho.jpg";
 import InjectableImg from "../Images/Injectable.jpg";
 import GeneralImg from "../Images/genral.jpg";
+import { useLocation } from "react-router-dom";
+
 
 const Products = () => {
   const [isAdmin, setIsAdmin] = useState(false);
@@ -13,7 +15,17 @@ const Products = () => {
   const [visibleTables, setVisibleTables] = useState({});
   const [searchQueries, setSearchQueries] = useState({});
   const [currentPages, setCurrentPages] = useState({});
-  
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const sectionId = location.hash.replace("#", "");
+      const sectionElement = document.getElementById(sectionId);
+      if (sectionElement) {
+        sectionElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   const itemsPerPage = 5;
 
@@ -178,7 +190,12 @@ const Products = () => {
 
       <div className="p-4 sm:p-6 space-y-10">
         {sections.map(({ key, title, info, image, bg, btn, imageLeft }) => (
-          <div key={key} className={`border p-4 rounded shadow-md w-full md:w-[80%] md:mx-auto ${bg}`}>
+          <div
+            key={key}
+            id={key}
+            className={`scroll-mt-28 border p-4 rounded shadow-md w-full md:w-[80%] md:mx-auto ${bg}`}
+          >
+
             <div className="flex flex-col md:flex-row items-center md:items-start gap-4">
               {imageLeft ? (
                 <>
@@ -213,11 +230,10 @@ const Products = () => {
 
             <button
               onClick={() => toggleTable(key)}
-              className={`mt-6 w-full py-2 px-4 rounded hover:opacity-90 transition-colors duration-300 ${
-    visibleTables[key] ? 'bg-cyan-600 text-white' : btn
-  }`}
->
-  {visibleTables[key] ? '- Product List' : '+ Product List'}
+              className={`mt-6 w-full py-2 px-4 rounded hover:opacity-90 transition-colors duration-300 ${visibleTables[key] ? 'bg-cyan-600 text-white' : btn
+                }`}
+            >
+              {visibleTables[key] ? '- Product List' : '+ Product List'}
             </button>
 
             {visibleTables[key] && renderTable(key)}

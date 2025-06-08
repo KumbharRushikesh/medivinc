@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import { Eye, Target, Stethoscope, Pill, Network } from 'lucide-react';
+import { Navigation, Pagination, Autoplay, Keyboard } from "swiper/modules";
+import { Eye, Target} from 'lucide-react';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -74,14 +74,15 @@ const About = () => {
   return (
     <SectionWrapper title="About Us">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
+        modules={[Navigation, Pagination, Autoplay, Keyboard]}
         spaceBetween={30}
         slidesPerView={1}
         navigation
+        keyboard={{ enabled: true }}
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
-        className="rounded-lg overflow-hidden"
+        className="group rounded-lg overflow-hidden"
       >
         <SwiperSlide>
           <div
