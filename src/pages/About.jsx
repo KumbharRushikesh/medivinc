@@ -1,8 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, Keyboard } from "swiper/modules";
-import { Eye, Target} from 'lucide-react';
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { Eye, Target, Stethoscope, Pill, Network } from 'lucide-react';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -45,8 +45,8 @@ const StatsBlock = ({ emoji, number, label, delay }) => (
     <div className="w-20 h-20 rounded-full border-4 border-cyan-600 bg-white flex items-center justify-center text-4xl shadow-lg">
       {emoji}
     </div>
-    <div className="text-2xl font-bold text-cyan-800">{number}+</div>
-    <div className="text-base font-medium text-gray-700">{label}</div>
+    <div className="text-2xl font-bold text-white">{number}+</div>
+    <div className="text-base font-medium text-white">{label}</div>
   </motion.div>
 );
 
@@ -74,15 +74,14 @@ const About = () => {
   return (
     <SectionWrapper title="About Us">
       <Swiper
-        modules={[Navigation, Pagination, Autoplay, Keyboard]}
+        modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
         slidesPerView={1}
         navigation
-        keyboard={{ enabled: true }}
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
         loop={true}
-        className="group rounded-lg overflow-hidden"
+        className="rounded-lg overflow-hidden"
       >
         <SwiperSlide>
           <div
@@ -130,11 +129,22 @@ const About = () => {
       <div className="bg-white rounded-lg shadow-lg p-6 mt-10 flex flex-col md:flex-row items-start gap-6 font-sans">
         {/* Medical Company Description on the left */}
         <div className="w-full md:w-1/2 text-gray-800 space-y-4 text-justify">
-          <p>
-            Welcome to MediVinc Healthcare Private Limited, where our founder's visionary journey began in 1999. Guided by an unwavering commitment to enhancing global health, we pioneer innovative research, manufacture exceptional products, and deliver excellence in marketing, fostering a brighter future for all. With a patient-centric approach and a passion for improving lives, we strive to set new standards in healthcare. Through our dedication to quality, integrity, and sustainability, we aim to make a lasting impact on the world. Empowering healthier communities, one innovation at a time.
+          <p style={{ textIndent: '30px' }}>
+            Welcome to MediVinc Healthcare Private Limited, where our founder's visionary journey began in 1999. Guided by an unwavering commitment
+            to enhancing global health, we pioneer innovative research, manufacture exceptional products, and deliver excellence in marketing,
+            fostering a brighter future for all. With a patient-centric approach and a passion for improving lives, we strive to set new standards
+            in healthcare. Through our dedication to quality, integrity, and sustainability, we aim to make a lasting impact on the world.
+            Empowering healthier communities, one innovation at a time.
           </p>
-          <p>
-            As a front-runner in women's healthcare, metabolic disorder and pain management segment, MEDIVINC is committed to serve ailing communities of Metro, Tier 1 to 5 and Rural areas with deeper market penetration in India. We are also having strong corporate governance, having financial control and compliance. Our robust infrastructure enables us to reach remote areas, ensuring that our medicines and services are accessible to those who need them most. With a patient-centric approach, we strive to improve health outcomes and enhance the quality of life. Our dedicated team works tirelessly to develop innovative solutions, foster strategic partnerships, and drive business growth. We prioritize transparency, accountability, and ethical practices, maintaining the highest standards of corporate governance. Our financial discipline and compliance ensure that we operate with integrity, reliability, and sustainability. By leveraging technology, we optimize our operations, streamline our supply chain, and expand our reach.
+          <p style={{ textIndent: '30px' }}>
+            As a front-runner in women's healthcare, metabolic disorder and pain management segment, MEDIVINC is committed to serve ailing communities
+            of Metro, Tier 1 to 5 and Rural areas with deeper market penetration in India. We are also having strong corporate governance,
+            having financial control and compliance. Our robust infrastructure enables us to reach remote areas, ensuring that our medicines &
+            services are accessible to those who need them most. With a patient-centric approach, we strive to improve health outcomes and enhance
+            the quality of life. Our dedicated team works tirelessly to develop innovative solutions, foster strategic partnerships, and drive business
+            growth. We prioritize transparency, accountability, and ethical practices, maintaining the highest standards of corporate governance.
+            Our financial discipline and compliance ensure that we operate with integrity, reliability, and sustainability. By leveraging technology,
+            we optimize our operations, streamline our supply chain, and expand our reach. Through our commitment to social
           </p>
         </div>
 
@@ -143,10 +153,10 @@ const About = () => {
           <img
             src="/images/description.jpg"
             alt="Medical professionals"
-            className="rounded-lg shadow-md w-full h-auto object-cover"
+            className="rounded-lg shadow-md w-full h-[44vh] object-cover"
           />
           <p className="text-gray-700 text-justify">
-            Through our commitment to social responsibility, we contribute to the betterment of society, promoting healthy communities and empowering individuals. With a strong vision for the future, we continue to innovate, grow, and make a meaningful difference in the lives of millions.
+            responsibility, we contribute to the betterment of society, promoting healthy communities and empowering individuals. With a strong vision for the future, we continue to innovate, grow, and make a meaningful difference in the lives of millions.
           </p>
         </div>
       </div>
@@ -158,25 +168,37 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Vision - Left */}
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col space-y-4 shadow-lg">
-            <div className="flex items-center gap-3">
-              <Eye className="text-cyan-300 w-8 h-8" />
-              <h2 className="text-2xl font-semibold text-cyan-300">Our Vision</h2>
+            <div className="flex items-start gap-4">
+              <div className="flex items-center h-full">
+                <Eye className="text-cyan-300 w-12 h-12" />
+              </div>
+              <div className="flex flex-col leading-tight">
+                <span className="text-2xl font-bold text-cyan-300">Our</span>
+                <span className="text-4xl font-extrabold text-cyan-300">Vision</span>
+              </div>
             </div>
-            <p className="text-base text-gray-100 text-justify leading-relaxed">
+            {/* Add padding-left equal to icon + gap (e.g. pl-16) */}
+            <p className="text-base text-gray-100 text-justify leading-relaxed pl-16">
               Our vision is to empower global health by becoming a leading pharmaceutical company, admired for our commitment to improving lives.
             </p>
           </div>
 
           {/* Mission - Right */}
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 flex flex-col space-y-4 shadow-lg mt-10 md:mt-0">
-            <div className="flex items-center gap-3">
-              <Target className="text-teal-300 w-8 h-8" />
-              <h2 className="text-2xl font-semibold text-teal-300">Our Mission</h2>
+            <div className="flex items-start gap-4">
+              <div className="flex items-center h-full">
+                <Target className="text-teal-300 w-12 h-12" />
+              </div>
+              <div className="flex flex-col leading-tight">
+                <span className="text-2xl font-bold text-teal-300">Our</span>
+                <span className="text-4xl font-extrabold text-teal-300">Mission</span>
+              </div>
             </div>
-            <p className="text-base text-gray-100 text-justify leading-relaxed">
+            <p className="text-base text-gray-100 text-justify leading-relaxed pl-16">
               To bridge the gap by identifying and addressing unmet consumer needs and thus creating value for all stakeholders.
             </p>
           </div>
+
         </div>
       </div>
 
@@ -200,25 +222,32 @@ const About = () => {
 
       </div>
 
-      <div
-        id="Strength"
-        className="scroll-mt-24 mt-10 bg-gradient-to-r from-cyan-100 via-white to-cyan-100 py-16 rounded-xl"
-      >
-        <h2 className="text-center text-3xl font-bold mb-12 text-cyan-800">
-          Medivinc Strength In Numbers
-        </h2>
+     <div
+  id="Strength"
+  className="scroll-mt-24 mt-16 py-20 bg-gradient-to-r from-gray-900 via-cyan-900 via-cyan-900 to-gray-900 rounded-2xl shadow-lg"
+>
+  <div className="text-center px-4 md:px-0">
+    <h2 className="text-4xl font-extrabold text-white mb-4">
+      Medivinc Strength in Numbers
+    </h2>
+    <p className="text-lg text-cyan-200 mb-12">
+      A snapshot of our scale and diversity across operations.
+    </p>
+  </div>
 
-        {/* First Row: Divisions and Brands */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-10 md:px-32 text-center mb-10">
-          <StatsBlock emoji="🏥" number="4" label="Divisions" delay={0.2} />
-          <StatsBlock emoji="🌐" number="41" label="Brands" delay={0.4} />
-        </div>
+  {/* First Row: Divisions and Brands */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-10 md:px-32 text-center mb-10">
+    <StatsBlock emoji="🏥" number="4" label="Divisions" delay={0.2} />
+    <StatsBlock emoji="🌐" number="41" label="Brands" delay={0.4} />
+  </div>
 
-        {/* Second Row: Products Centered */}
-        <div className="flex justify-center">
-          <StatsBlock emoji="💊" number="45" label="Products" delay={0.6} />
-        </div>
-      </div>
+  {/* Second Row: Products Centered */}
+  <div className="flex justify-center px-10 md:px-32">
+    <div className="w-full md:w-1/2 lg:w-1/3">
+      <StatsBlock emoji="💊" number="45" label="Products" delay={0.6} />
+    </div>
+  </div>
+</div>
 
 
       {/* Our Core Values Section */}
