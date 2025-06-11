@@ -5,7 +5,7 @@ import About from "./pages/About";
 import Vision from "./pages/Vision";
 import Social from "./pages/Social";
 import Products from "./pages/Products";
-import Quality from "./pages/Quality";
+import Contactus from "./pages/Contactus";
 import Login from "./pages/Login";
 import AllProducts from "./pages/AllProducts";
 import Footer from "./components/Footer";
@@ -19,7 +19,7 @@ const App = () => (
       <Route path="/vision" element={<Vision />} />
       <Route path="/social" element={<Social />} />
       <Route path="/products" element={<Products />} />
-      <Route path="/quality" element={<Quality />} />
+      <Route path="/Contactus" element={<Contactus />} />
       <Route path="/login" element={<Login />} />
       <Route path="/allproducts" element={<AllProducts />} />
     </Routes>
