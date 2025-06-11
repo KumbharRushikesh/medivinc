@@ -132,28 +132,35 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="px-4 py-10 text-center bg-sky-100 rounded-3xl">
-        <h2 className="text-2xl font-bold mb-2">Focus Areas</h2>
-        <p className="mb-6 text-gray-700">
-          Established presence in key medicine areas
-        </p>
-        <div className="flex flex-wrap justify-center gap-10">
-          {focusAreas.map((area, index) => (
+       <div className="px-4 py-16 bg-gradient-to-r from-gray-900 via-cyan-900 via-cyan-900 to-gray-900 rounded-xl text-center">
+      <h2 className="text-3xl font-bold mb-3 text-white">Our Focus Areas</h2>
+      <p className="mb-10 text-white text-base">
+        Established presence in key medical specialties
+      </p>
+      <div className="flex flex-wrap justify-center gap-8">
+        {focusAreas.map((area, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.1, rotate: 2 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-40 h-40 rounded-full bg-gradient-to-tr from-sky-300 to-sky-500 text-white shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col items-center justify-center relative overflow-hidden"
+            onClick={() => navigate(`/products#${area.sectionId}`)}
+          >
             <motion.div
-              key={index}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-40 h-40 rounded-full border border-black flex flex-col items-center justify-center p-2 bg-white shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
-              onClick={() => navigate(`/products#${area.sectionId}`)}
+              animate={{ y: [0, -5, 0] }}
+              transition={{ repeat: Infinity, duration: 1.6 }}
+              className="text-4xl mb-2"
             >
-              <div className="text-3xl mb-1">{area.emoji}</div>
-              <h3 className="font-semibold text-sm text-center px-2">
-                {area.title}
-              </h3>
+              {area.emoji}
             </motion.div>
-          ))}
-        </div>
+            <h3 className="font-semibold text-sm text-center px-4 leading-tight">
+              {area.title}
+            </h3>
+            <div className="absolute bottom-0 w-full h-2 bg-white/20 rounded-b-full blur-sm" />
+          </motion.div>
+        ))}
       </div>
+    </div>
     </SectionWrapper>
 
 
