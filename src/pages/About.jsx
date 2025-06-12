@@ -9,6 +9,9 @@ import "swiper/css/pagination";
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import SectionWrapper from "../components/SectionWrapper";
+import banner1 from "../Images/Banner1.webp";
+import banner2 from "../Images/productbaner.webp";
+import banner3 from "../Images/productbaner.webp";
 
 const TimelineBlock = ({ year, icon, description, isUp }) => {
   return (
@@ -86,7 +89,7 @@ const About = () => {
         <SwiperSlide>
           <div
             className="relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center text-white"
-            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1523958203904-cdcb402031fd')` }}
+             style={{ backgroundImage: `url(${banner1})` }}
           >
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
               <h3 className="text-2xl font-bold mb-2">Who We Are</h3>
@@ -100,7 +103,7 @@ const About = () => {
         <SwiperSlide>
           <div
             className="relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center text-white"
-            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1531973968078-9bb02785f13d')` }}
+           style={{ backgroundImage: `url(${banner2})` }}
           >
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
               <h3 className="text-2xl font-bold mb-2">Our Mission</h3>
@@ -114,7 +117,7 @@ const About = () => {
         <SwiperSlide>
           <div
             className="relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center text-white"
-            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1605902711622-cfb43c44367f')` }}
+            style={{ backgroundImage: `url(${banner3})` }}
           >
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
               <h3 className="text-2xl font-bold mb-2">Why Choose Us</h3>
@@ -142,21 +145,20 @@ const About = () => {
             having financial control and compliance. Our robust infrastructure enables us to reach remote areas, ensuring that our medicines &
             services are accessible to those who need them most. With a patient-centric approach, we strive to improve health outcomes and enhance
             the quality of life. Our dedicated team works tirelessly to develop innovative solutions, foster strategic partnerships, and drive business
-            growth. We prioritize transparency, accountability, and ethical practices, maintaining the highest standards of corporate governance.
-            Our financial discipline and compliance ensure that we operate with integrity, reliability, and sustainability. By leveraging technology,
-            we optimize our operations, streamline our supply chain, and expand our reach. Through our commitment to social
+            growth. 
           </p>
         </div>
 
         {/* Image on the right with description below */}
         <div className="w-full md:w-1/2 flex flex-col items-start space-y-4">
           <img
-            src="/images/description.jpg"
+            src="/images/description.webp"
             alt="Medical professionals"
             className="rounded-lg shadow-md w-full h-[44vh] object-cover"
           />
-          <p className="text-gray-700 text-justify">
-            responsibility, we contribute to the betterment of society, promoting healthy communities and empowering individuals. With a strong vision for the future, we continue to innovate, grow, and make a meaningful difference in the lives of millions.
+          <p className="text-gray-700 text-justify" style={{ textIndent: '30px' }} >
+             We prioritize transparency, accountability, and ethical practices, maintaining the highest standards of corporate governance.
+            Our financial discipline and compliance ensure that we operate with integrity, reliability, and sustainability. By leveraging technology, we optimize our operations, streamline our supply chain, and expand our reach. Through our commitment to social responsibility, we contribute to the betterment of society, promoting healthy communities and empowering individuals. With a strong vision for the future, we continue to innovate, grow, and make a meaningful difference in the lives of millions.
           </p>
         </div>
       </div>

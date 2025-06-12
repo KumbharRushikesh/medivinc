@@ -178,7 +178,7 @@ const Products = () => {
   return (
     <SectionWrapper title="Our Products">
       <div
-        className="relative w-full h-[500px] sm:h-[800px] bg-cover bg-center flex items-end px-6 pb-6"
+        className="relative w-full h-[300px] sm:h-[500px] bg-cover bg-center flex items-end px-6 pb-6"
         style={{ backgroundImage: `url(${banneImg})` }}
       >
         <div className="bg-white bg-opacity-90 px-4 sm:px-8 py-4 rounded-md max-w-full sm:max-w-[90%]">
@@ -193,7 +193,7 @@ const Products = () => {
           <div
             key={key}
             id={key}
-            className={`scroll-mt-28 border p-4 rounded shadow-md w-full md:w-[80%] md:mx-auto ${bg}`}
+            className={`scroll-mt-28 border p-4 rounded shadow-md w-full md:w-[90%] md:mx-auto ${bg}`}
           >
 
             <div className="flex flex-col md:flex-row items-center md:items-start gap-4">

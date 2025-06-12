@@ -110,6 +110,8 @@ const Navbar = () => {
           </div>
 
           <Link className="hover:text-blue-800" to="/about#Vision-Mission" onClick={closeMobileMenu}>Vision & Mission</Link>
+          <Link className="hover:text-blue-800" to="/contactus" onClick={closeMobileMenu}>Contact US</Link>
+
 
           {isAdmin ? (
             <button onClick={handleLogout} className="hover:text-red-600 text-left">Logout</button>
