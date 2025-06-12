@@ -36,6 +36,33 @@ const Home = () => {
     },
   ];
 
+  const boardMembers = [
+  {
+    name: "Dr. Anjali Mehra",
+    designation: "Chief Medical Officer",
+    contact: "+91-9876543210",
+    image:  '/images/medicines1.png', 
+  },
+  {
+    name: "Mr. Rajiv Sharma",
+    designation: "Managing Director",
+    contact: "+91-9988776655",
+    image: "/images/medicines1.png",
+  },
+  {
+    name: "Ms. Neha Kapoor",
+    designation: "Head of Operations",
+    contact: "+91-9123456780",
+    image: "/images/dummy_profile_img.png",
+  },
+  {
+    name: "Dr. Arvind Rao",
+    designation: "Medical Advisor",
+    contact: "+91-9011223344",
+    image: "/images/medicines1.png",
+  },
+];
+
 
 
 
@@ -132,31 +159,61 @@ const Home = () => {
         </div>
       </div>
 
-       <div className="px-4 py-16 bg-gradient-to-r from-gray-900 via-cyan-900 via-cyan-900 to-gray-900 rounded-xl text-center">
-      <h2 className="text-3xl font-bold mb-3 text-white">Our Focus Areas</h2>
-      <p className="mb-10 text-white text-base">
-        Established presence in key medical specialties
-      </p>
-      <div className="flex flex-wrap justify-center gap-8">
-        {focusAreas.map((area, index) => (
+      <div className="px-4 py-16 bg-gradient-to-r from-gray-900 via-cyan-900 via-cyan-900 to-gray-900 rounded-xl text-center">
+        <h2 className="text-3xl font-bold mb-3 text-white">Our Focus Areas</h2>
+        <p className="mb-10 text-white text-base">
+          Established presence in key medical specialties
+        </p>
+        <div className="flex flex-wrap justify-center gap-8">
+          {focusAreas.map((area, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.1, rotate: 2 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-40 h-40 rounded-full bg-gradient-to-tr from-sky-300 to-sky-500 text-white shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col items-center justify-center relative overflow-hidden"
+              onClick={() => navigate(`/products#${area.sectionId}`)}
+            >
+              <motion.div
+                animate={{ y: [0, -5, 0] }}
+                transition={{ repeat: Infinity, duration: 1.6 }}
+                className="text-4xl mb-2"
+              >
+                {area.emoji}
+              </motion.div>
+              <h3 className="font-semibold text-sm text-center px-4 leading-tight">
+                {area.title}
+              </h3>
+              <div className="absolute bottom-0 w-full h-2 bg-white/20 rounded-b-full blur-sm" />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+<div
+      className="bg-cover bg-center bg-no-repeat py-12 px-6 md:px-20 rounded-xl"
+      style={{
+        backgroundImage: "url('/images/new6.png')",
+      }}
+    >      <h2 className="text-3xl font-bold text-center mb-10 text-blue-800">
+        Board of Directors
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {boardMembers.map((member, index) => (
           <motion.div
             key={index}
-            whileHover={{ scale: 1.1, rotate: 2 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-40 h-40 rounded-full bg-gradient-to-tr from-sky-300 to-sky-500 text-white shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer flex flex-col items-center justify-center relative overflow-hidden"
-            onClick={() => navigate(`/products#${area.sectionId}`)}
+            whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.15)" }}
+            className="bg-white rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer"
           >
-            <motion.div
-              animate={{ y: [0, -5, 0] }}
-              transition={{ repeat: Infinity, duration: 1.6 }}
-              className="text-4xl mb-2"
-            >
-              {area.emoji}
-            </motion.div>
-            <h3 className="font-semibold text-sm text-center px-4 leading-tight">
-              {area.title}
-            </h3>
-            <div className="absolute bottom-0 w-full h-2 bg-white/20 rounded-b-full blur-sm" />
+            <img
+              src={member.image}
+              alt={member.name}
+              className="w-full h-48 "
+            />
+            <div className="p-5 text-center">
+              <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
+              <p className="text-blue-600 font-medium">{member.designation}</p>
+              <p className="text-gray-500 mt-2">{member.contact}</p>
+            </div>
           </motion.div>
         ))}
       </div>
