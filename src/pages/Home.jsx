@@ -159,59 +159,72 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="px-4 py-16 rounded-xl text-center">
-        <h2 className="text-3xl font-bold mb-3 text-gray-800">Our Focus Areas</h2>
-        <p className="mb-10 text-gray-700 text-base">
-          Established presence in key medical specialties
-        </p>
-        <div className="flex flex-wrap justify-center mb-20 gap-8">
-          {focusAreas.map((area, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.1, rotate: 2 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-40 h-40 rounded-full bg-gradient-to-tr from-[#D5EEF4] to-[#B8DBE5] text-gray-800 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col items-center justify-center relative overflow-hidden"
-              onClick={() => navigate(`/products#${area.sectionId}`)}
-            >
-              <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ repeat: Infinity, duration: 1.6 }}
-                className="text-4xl mb-2"
-              >
-                {area.emoji}
-              </motion.div>
-              <h3 className="font-semibold text-sm text-center px-4 leading-tight">
-                {area.title}
-              </h3>
-              <div className="absolute bottom-0 w-full h-2 bg-white/30 rounded-b-full blur-sm" />
-            </motion.div>
-          ))}
-        </div>
+      <div className="px-4 py-10 bg-gradient-to-r from-blue-50 to-blue-50 rounded-xl text-center">
+  <h2 className="text-3xl font-bold mb-3 text-gray-800">Our Focus Areas</h2>
+  <p className="mb-6 text-gray-700 text-base">
+    Established presence in key medical specialties
+  </p>
 
-         <h2 className="text-3xl font-bold text-center mb-10  text-gray-800">
-          Board of Directors
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {boardMembers.map((member, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.15)" }}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer"
-            >
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-48 "
-              />
-              <div className="p-5 text-center">
-                <h3 className="text-xl font-semibold text-gray-800">{member.name}</h3>
-                <p className="text-blue-600 font-medium">{member.designation}</p>
-                <p className="text-gray-500 mt-2">{member.contact}</p>
-              </div>
-            </motion.div>
-          ))}
+  <div className="grid grid-cols-2 place-items-center sm:flex sm:flex-row sm:justify-center sm:gap-8 gap-6 mb-5">
+    {focusAreas.map((area, index) => (
+      <motion.div
+        key={index}
+        whileHover={{ scale: 1.1, rotate: 2 }}
+        whileTap={{ scale: 0.95 }}
+        className={`
+          w-28 h-28 sm:w-40 sm:h-40
+          ${index === 4 ? 'col-start-1 col-end-3 justify-self-center' : ''}
+          rounded-full bg-gradient-to-tr from-[#D5EEF4] to-[#B8DBE5]
+          text-gray-800 shadow-md hover:shadow-xl transition-all duration-300
+          cursor-pointer flex flex-col items-center justify-center
+          relative overflow-hidden
+        `}
+        onClick={() => navigate(`/products#${area.sectionId}`)}
+      >
+        <motion.div className="text-2xl sm:text-4xl mb-1 sm:mb-2">
+          {area.emoji}
+        </motion.div>
+        <h3 className="text-xs sm:text-sm px-2 sm:px-4 leading-tight text-center font-semibold">
+          {area.title}
+        </h3>
+        <div className="absolute bottom-0 w-full h-2 bg-white/30 rounded-b-full blur-sm" />
+      </motion.div>
+    ))}
+  </div>
+</div>
+
+<div className="bg-cover bg-center bg-no-repeat py-8 px-6 md:px-20 rounded-xl bg-gradient-to-r from-blue-50 to-blue-50">
+  <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
+    Board of Directors
+  </h2>
+
+  <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    {boardMembers.map((member, index) => (
+      <motion.div
+        key={index}
+        whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0,0,0,0.15)" }}
+        className="bg-white rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 cursor-pointer"
+      >
+        <img
+          src={member.image}
+          alt={member.name}
+          className="w-full h-40 sm:h-48 object-cover"
+        />
+        <div className="px-3 py-4 sm:px-5 sm:py-6 text-center">
+          <h3 className="text-base sm:text-xl font-semibold text-gray-800">
+            {member.name}
+          </h3>
+          <p className="text-sm sm:text-base text-blue-600 font-medium mt-1">
+            {member.designation}
+          </p>
+          <p className="text-xs sm:text-sm text-gray-500 mt-2 break-words">
+            {member.contact}
+          </p>
         </div>
-      </div>
+      </motion.div>
+    ))}
+  </div>
+</div>
 
     </SectionWrapper>
 
