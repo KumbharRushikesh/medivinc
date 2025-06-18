@@ -3,8 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, Keyboard } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-
-
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -40,6 +39,19 @@ const Home = () => {
 
 
   return (
+    <>
+    <Helmet>
+      <title>MediVinc | Quality Healthcare Solutions in India</title>
+       <meta
+          name="description"
+          content="Explore MediVinc's focus on gynecology, pediatrics, orthopedics, injectables, and general health products. Affordable, reliable healthcare from a trusted Indian pharmaceutical company."
+        />
+         <meta
+          name="keywords"
+          content="MediVinc, Indian pharmaceutical, gynecology medicines, pediatric medicines, orthopedic medicines, healthcare products, affordable healthcare, pharma company India"
+        />
+         <link rel="canonical" href="https://www.medivinc.com/" />
+    </Helmet>
     <SectionWrapper title="Welcome to MediVinc">
 
       <Swiper
@@ -85,20 +97,6 @@ const Home = () => {
           <div
             className="relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center text-white"
             style={{ backgroundImage: `url('/images/medical.png')` }}
-          >
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
-              <h3 className="text-2xl font-bold mb-2">Why Choose Us</h3>
-              <p className="max-w-xl text-center">
-                Personalized service, transparent pricing, and expert advice trusted by hundreds.
-              </p>
-            </div>
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide>
-          <div
-            className="relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center text-white"
-            style={{ backgroundImage: `url('/images/medicines1.png')` }}
           >
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
               <h3 className="text-2xl font-bold mb-2">Why Choose Us</h3>
@@ -155,6 +153,8 @@ const Home = () => {
         </div>
       </div>
     </SectionWrapper>
+    
+    </>
 
 
   );

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import SectionWrapper from "../components/SectionWrapper";
-
+import { Helmet } from "react-helmet-async";
 
 const AllProducts = () => {
   const [products, setProducts] = useState([]);
@@ -83,6 +83,63 @@ const AllProducts = () => {
   };
 
   return (
+    <>
+    <Helmet>
+        <title>Our Products - MediVinc Healthcare Pvt Ltd | Brands, Divisions, Pharma</title>
+        <meta
+          name="description"
+          content="Explore MediVinc's wide range of products across women’s healthcare, metabolic disorders, and pain management. View brands, descriptions, and divisions."
+        />
+        <meta
+          name="keywords"
+          content="MediVinc products, pharma brands, healthcare divisions, women health products, pain relief, metabolism, pharmaceutical"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.medivinc.com/products" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Our Products - MediVinc Healthcare" />
+        <meta
+          property="og:description"
+          content="Discover over 45 products across 4 divisions focusing on quality and innovation in healthcare."
+        />
+        <meta property="og:url" content="https://www.medivinc.com/products" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://www.medivinc.com/images/og-banner-products.jpg"
+        />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Products - MediVinc Healthcare Pvt Ltd" />
+        <meta
+          name="twitter:description"
+          content="Explore our complete pharma product catalog, tailored to improve healthcare accessibility in India."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.medivinc.com/images/og-banner-products.jpg"
+        />
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "ProductCatalog",
+              "name": "MediVinc Healthcare Product List",
+              "url": "https://www.medivinc.com/products",
+              "description": "List of products offered by MediVinc Healthcare Pvt Ltd including brand, description, and division details.",
+              "provider": {
+                "@type": "Organization",
+                "name": "MediVinc Healthcare Pvt Ltd",
+                "url": "https://www.medivinc.com"
+              }
+            }
+          `}
+        </script>
+      </Helmet>
     <SectionWrapper title="Products">
 
    
@@ -260,6 +317,7 @@ const AllProducts = () => {
       )}
     </div>
      </SectionWrapper>
+     </>
   );
 };
 

@@ -7,6 +7,8 @@ import orthoImg from "../Images/ortho.jpg";
 import InjectableImg from "../Images/Injectable.jpg";
 import GeneralImg from "../Images/genral.jpg";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+
 
 
 const Products = () => {
@@ -77,51 +79,80 @@ const Products = () => {
     );
 
     return (
-      <div className="mt-4">
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => handleSearch(key, e.target.value)}
-          placeholder="Search by brand"
-          className="mb-2 p-2 w-full border border-gray-300 rounded"
-        />
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse border border-gray-300 text-sm">
-            <thead className="bg-cyan-600 text-white">
-              <tr>
-                <th className="border border-gray-300 p-2 text-white">#</th>
-                <th className="border border-gray-300 p-2 text-white">Brand Name</th>
-                <th className="border border-gray-300 p-2 text-white">Description</th>
-                <th className="border border-gray-300 p-2 text-white">Division</th>
-              </tr>
-            </thead>
-            <tbody>
-              {paginated.map((item, index) => (
-                <tr key={index}>
-                  <td className="border border-gray-300 p-2">
-                    {(page - 1) * itemsPerPage + index + 1}
-                  </td>
-                  <td className="border border-gray-300 p-2">{item.brand}</td>
-                  <td className="border border-gray-300 p-2">{item.description}</td>
-                  <td className="border border-gray-300 p-2">{item.division}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+      <>
+        <Helmet>
+          <title>Our Product Range - MediVinc Healthcare Pvt Ltd</title>
+          <meta
+            name="description"
+            content="Explore MediVinc Healthcare’s wide product range including Gynac, Pediatrics, Ortho, Injectable, and General medicines. Quality pharmaceutical products for better health."
+          />
+          <meta
+            name="keywords"
+            content="MediVinc Products, Gynac medicines, Pediatric healthcare, Ortho products, Injectables, General range medicines, pharma products"
+          />
+          <meta name="robots" content="index, follow" />
+          <link rel="canonical" href="https://www.medivinc.com/products" />
 
-        <div className="text-center mt-2 flex flex-wrap justify-center">
-          {Array.from({ length: totalPages }, (_, idx) => (
-            <button
-              key={idx}
-              onClick={() => handlePageChange(key, idx + 1)}
-              className={`px-3 py-1 m-1 bg-cyan-600 rounded text-white`}
-            >
-              {idx + 1}
-            </button>
-          ))}
+          {/* Open Graph / Facebook */}
+          <meta property="og:title" content="Our Product Range - MediVinc Healthcare Pvt Ltd" />
+          <meta property="og:description" content="Discover MediVinc’s trusted and effective medicines across Gynac, Pediatric, Ortho, Injectable, and General segments." />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://www.medivinc.com/products" />
+          <meta property="og:image" content="https://www.medivinc.com/images/product-banner.jpg" />
+
+          {/* Twitter Card */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="Our Product Range - MediVinc Healthcare Pvt Ltd" />
+          <meta name="twitter:description" content="MediVinc offers high-quality pharmaceutical products in multiple therapeutic areas. Learn more." />
+          <meta name="twitter:image" content="https://www.medivinc.com/images/product-banner.jpg" />
+        </Helmet>
+
+        <div className="mt-4">
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => handleSearch(key, e.target.value)}
+            placeholder="Search by brand"
+            className="mb-2 p-2 w-full border border-gray-300 rounded"
+          />
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse border border-gray-300 text-sm">
+              <thead className="bg-cyan-600 text-white">
+                <tr>
+                  <th className="border border-gray-300 p-2 text-white">#</th>
+                  <th className="border border-gray-300 p-2 text-white">Brand Name</th>
+                  <th className="border border-gray-300 p-2 text-white">Description</th>
+                  <th className="border border-gray-300 p-2 text-white">Division</th>
+                </tr>
+              </thead>
+              <tbody>
+                {paginated.map((item, index) => (
+                  <tr key={index}>
+                    <td className="border border-gray-300 p-2">
+                      {(page - 1) * itemsPerPage + index + 1}
+                    </td>
+                    <td className="border border-gray-300 p-2">{item.brand}</td>
+                    <td className="border border-gray-300 p-2">{item.description}</td>
+                    <td className="border border-gray-300 p-2">{item.division}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="text-center mt-2 flex flex-wrap justify-center">
+            {Array.from({ length: totalPages }, (_, idx) => (
+              <button
+                key={idx}
+                onClick={() => handlePageChange(key, idx + 1)}
+                className={`px-3 py-1 m-1 bg-cyan-600 rounded text-white`}
+              >
+                {idx + 1}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      </>
     );
   };
 

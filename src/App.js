@@ -9,8 +9,10 @@ import Contactus from "./pages/Contactus";
 import Login from "./pages/Login";
 import AllProducts from "./pages/AllProducts";
 import Footer from "./components/Footer";
+import { HelmetProvider } from "react-helmet-async";
 
 const App = () => (
+  <HelmetProvider>
   <Router>
     <Navbar />
     <Routes>
@@ -26,6 +28,7 @@ const App = () => (
     <Footer />
 
   </Router>
+  </HelmetProvider>
 );
 
 export default App;

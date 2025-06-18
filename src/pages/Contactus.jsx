@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import banneImg from "../Images/productbaner.png";
 import emailjs from "@emailjs/browser";
+import { Helmet } from "react-helmet-async";
 
 const Contactus = () => {
   const form = useRef();
@@ -10,10 +11,10 @@ const Contactus = () => {
 
     emailjs
       .sendForm(
-        "service_jgphk5a",     // ✅ Replace with your EmailJS service ID
-        "template_fqb1msn",    // ✅ Replace with your EmailJS template ID
+        "service_yz6thxy",     // ✅ Replace with your EmailJS service ID
+        "template_katy34v",    // ✅ Replace with your EmailJS template ID
         form.current,
-        "3dhj9_MQ3EE4OvwIs"      // ✅ Replace with your EmailJS public key
+        "KfQ6DxxHWZASMGBxV"      // ✅ Replace with your EmailJS public key
       )
       .then(
         (result) => {
@@ -28,6 +29,46 @@ const Contactus = () => {
   };
 
   return (
+    <>
+    <Helmet>
+  <title>Contact Us - MediVinc Healthcare Pvt Ltd</title>
+  <meta
+    name="description"
+    content="Get in touch with MediVinc Healthcare for inquiries, support, or business opportunities. We're here to help you with all your healthcare needs."
+  />
+  <meta
+    name="keywords"
+    content="Contact MediVinc, MediVinc support, MediVinc email, pharma company contact, healthcare support"
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.medivinc.com/contact" />
+
+  {/* Open Graph */}
+  <meta property="og:title" content="Contact MediVinc Healthcare" />
+  <meta
+    property="og:description"
+    content="Reach out to MediVinc for partnerships, inquiries, or support. Your health is our priority."
+  />
+  <meta property="og:url" content="https://www.medivinc.com/contact" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:image"
+    content="https://www.medivinc.com/images/og-contact.jpg"
+  />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact MediVinc Healthcare Pvt Ltd" />
+  <meta
+    name="twitter:description"
+    content="Contact our team at MediVinc for queries or healthcare-related support."
+  />
+  <meta
+    name="twitter:image"
+    content="https://www.medivinc.com/images/og-contact.jpg"
+  />
+</Helmet>
+
     <div className="min-h-screen flex items-center justify-center bg-black text-white relative">
     {/* ✅ Background Overlay Image */}
       <div
@@ -84,6 +125,7 @@ const Contactus = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
