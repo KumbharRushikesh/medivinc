@@ -191,7 +191,7 @@ const Home = () => {
   </div>
 </div>
 
-<div className="bg-cover bg-center bg-no-repeat py-8 px-6 md:px-20 rounded-xl bg-gradient-to-r from-blue-50 to-blue-50">
+<div className="hidden bg-cover bg-center bg-no-repeat py-8 px-6 md:px-20 rounded-xl bg-gradient-to-r from-blue-50 to-blue-50">
   <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">
     Board of Directors
   </h2>
