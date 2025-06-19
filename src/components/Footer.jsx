@@ -12,10 +12,10 @@ const Footer = () => {
         </div>
         <div>
           <h4 className="font-semibold mb-2">Contact Us</h4>
-          <p>📍 123, Pharma Road, Healthcare City, India</p>
-          <p>📱 Mobile: +91 9876543210</p>
-          <p>☎️ Office: 022-12345678</p>
-          <p>✉️ Email: contact@medivinc.com</p>
+          <p>📍 KH-4/6/303 Sector 16, Kharghar, New Mumbai, Raigarh, Maharashtra, India</p>
+          <p>📱 Mobile: +91 9604450090</p>
+          <p>☎️ Office: +91 9604450090</p>
+          <p>✉️ Email: medivinchealth@gmail.com</p>
         </div>
         <div>
           <h4 className="font-semibold mb-2">Quick Links</h4>
