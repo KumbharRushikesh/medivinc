@@ -14,6 +14,7 @@ import banner2 from "../Images/productbaner.webp";
 import banner3 from "../Images/productbaner.webp";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import TimelineBlock2 from "../components/TimelineBlock2";
+import logo from '../Images/medivincLogo.png';
 
 
 const TimelineBlock = ({ year, icon, description, isUp }) => {
@@ -128,7 +129,7 @@ const About = () => {
         >
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6 text-white space-y-4">
             <img
-              src="/Images/logo.png"  
+              src={logo}  
               alt="MediVinc Logo"
               className="h-16 md:h-24" 
             />

@@ -5,7 +5,7 @@ import logo from '../Images/medivincLogo.png';
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white py-10 px-6 mt-20">
+    <footer className="bg-blue-900 text-white py-10 px-6 mt-0">
       <div className="mx-auto grid md:grid-cols-4 gap-6 text-sm">
         <div>
           <img
@@ -13,7 +13,7 @@ const Footer = () => {
           alt="MediVinc Logo"
           className="h-12 w-auto" // Adjust height/width as needed
         />
-          <p>Empowering global health through quality and affordability.</p>
+          <p>Transforming Healthcare, Transforming Lives.</p>
         </div>
         <div>
           <h4 className="font-semibold mb-2">Contact Us</h4>
@@ -28,7 +28,7 @@ const Footer = () => {
             <li><Link to="/" className="hover:underline">Home</Link></li>
             <li><Link to="/about" className="hover:underline">About Us</Link></li>
             <li><Link to="/products" className="hover:underline">Products</Link></li>
-            <li><Link to="/quality" className="hover:underline">Quality</Link></li>
+            <li><Link to="/contactus" className="hover:underline">Contact US</Link></li>
           </ul>
         </div>
         <div>
