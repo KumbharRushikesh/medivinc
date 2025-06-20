@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import logo from '../Images/medivincLogo.png';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -27,7 +28,14 @@ const Navbar = () => {
   return (
     <nav className="bg-white border-b border-gray-200 shadow-lg p-5 flex flex-col md:flex-row justify-between items-center sticky top-0 z-50">
       <div className="flex justify-between w-full md:w-auto items-center">
-        <h1 className="text-3xl font-bold text-blue-900 font-serif">MediVinc</h1>
+        <Link to="/">
+        <img
+          src={logo} // Adjust path based on actual public/static file structure
+          alt="MediVinc Logo"
+          className="h-12 w-auto" // Adjust height/width as needed
+        />
+        </Link>
+        
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-gray-700 focus:outline-none"

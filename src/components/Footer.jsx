@@ -1,13 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import logo from '../Images/medivincLogo.png';
 
 const Footer = () => {
   return (
     <footer className="bg-blue-900 text-white py-10 px-6 mt-20">
       <div className="mx-auto grid md:grid-cols-4 gap-6 text-sm">
         <div>
-          <h3 className="font-bold text-xl mb-4">MediVinc</h3>
+          <img
+          src={logo} // Adjust path based on actual public/static file structure
+          alt="MediVinc Logo"
+          className="h-12 w-auto" // Adjust height/width as needed
+        />
           <p>Empowering global health through quality and affordability.</p>
         </div>
         <div>

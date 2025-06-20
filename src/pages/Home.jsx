@@ -63,6 +63,15 @@ const Home = () => {
   ];
 
 
+  const brands = [
+  "Medfol Tb",
+  "Argiplus Schate",
+  "Dydrovinc 10 TB",
+  "Levocool - M Tb",
+  "Kinclav 625 Tb",
+  "Medcepo 200 Tb",
+  "Brzole DSR Cap"
+];
 
 
   return (
@@ -225,40 +234,34 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="px-4 py-16 bg-gradient-to-r from-blue-50 to-blue-50 rounded-xl text-center">
-          <h2 className="text-3xl font-bold mb-6 text-blue-900">Our Leading Brands</h2>
+<div className="px-4 py-16 bg-gradient-to-br from-blue-100 via-white to-blue-100 rounded-xl text-center overflow-hidden">
+      <h2 className="text-3xl sm:text-4xl font-extrabold mb-10 text-blue-900 drop-shadow-lg">🌟 Our Leading Brands</h2>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 justify-items-center">
-            {/* Brand Cards */}
-            <div className="bg-white shadow-md rounded-lg p-4 w-full hover:scale-105 transition-transform duration-300">
-              <p className="text-blue-800 font-semibold">Medfol Tb</p>
+      <div className="relative w-full overflow-hidden">
+        <div className="flex w-max animate-slide space-x-4 px-2 sm:px-4">
+          {[...brands, ...brands].map((brand, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-xl border border-blue-100 hover:border-blue-300 rounded-xl px-6 py-4 min-w-[180px] sm:min-w-[200px] hover:scale-105 transition-all duration-300 hover:shadow-blue-200"
+            >
+              <p className="text-blue-800 font-semibold text-sm sm:text-base tracking-wide">{brand}</p>
             </div>
-
-            <div className="bg-white shadow-md rounded-lg p-4 w-full hover:scale-105 transition-transform duration-300">
-              <p className="text-blue-800 font-semibold">Argiplus Schate</p>
-            </div>
-
-            <div className="bg-white shadow-md rounded-lg p-4 w-full hover:scale-105 transition-transform duration-300">
-              <p className="text-blue-800 font-semibold">Dydrovinc 10 TB</p>
-            </div>
-
-            <div className="bg-white shadow-md rounded-lg p-4 w-full hover:scale-105 transition-transform duration-300">
-              <p className="text-blue-800 font-semibold">Levocool - M Tb</p>
-            </div>
-
-            <div className="bg-white shadow-md rounded-lg p-4 w-full hover:scale-105 transition-transform duration-300">
-              <p className="text-blue-800 font-semibold">Kinclav 625 Tb</p>
-            </div>
-
-            <div className="bg-white shadow-md rounded-lg p-4 w-full hover:scale-105 transition-transform duration-300">
-              <p className="text-blue-800 font-semibold">Medcepo 200 Tb</p>
-            </div>
-
-            <div className="bg-white shadow-md rounded-lg p-4 w-full hover:scale-105 transition-transform duration-300">
-              <p className="text-blue-800 font-semibold">Brzole DSR Cap</p>
-            </div>
-          </div>
+          ))}
         </div>
+      </div>
+
+      {/* Inline animation keyframes */}
+      <style>{`
+        @keyframes slide {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-slide {
+          animation: slide 25s linear infinite;
+        }
+      `}</style>
+    </div>
+
 
 
       </SectionWrapper>
