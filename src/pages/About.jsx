@@ -132,6 +132,7 @@ const About = () => {
               src={logo}  
               alt="MediVinc Logo"
               className="h-16 md:h-24" 
+              loading="lazy"
             />
 
             {/* Heading */}
@@ -226,6 +227,7 @@ const About = () => {
               src="/images/description.webp"
               alt="Medical professionals"
               className="rounded-lg shadow-md w-full h-[44vh] object-cover"
+              loading="lazy"
             />
             <p className="text-gray-700 text-justify" style={{ textIndent: '30px' }} >
               We prioritize transparency, accountability, and ethical practices, maintaining the highest standards of corporate governance.

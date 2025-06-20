@@ -208,16 +208,20 @@ const Products = () => {
 
   return (
     <SectionWrapper title="Our Products">
-      <div
-        className="relative w-full h-[300px] sm:h-[500px] bg-cover bg-center flex items-end px-6 pb-6"
-        style={{ backgroundImage: `url(${banneImg})` }}
-      >
-        <div className="bg-white bg-opacity-90 px-4 sm:px-8 py-4 rounded-md max-w-full sm:max-w-[90%]">
+      <div className="relative w-full h-[300px] sm:h-[500px] flex items-end px-6 pb-6 overflow-hidden">
+        <img
+          src={banneImg}
+          alt="Key Products"
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="bg-white bg-opacity-90 px-4 sm:px-8 py-4 rounded-md max-w-full sm:max-w-[90%] z-10">
           <h1 className="text-3xl sm:text-5xl font-bold uppercase text-orange-600">
             Key Products
           </h1>
         </div>
       </div>
+
 
       <div className="p-4 sm:p-6 space-y-10">
         {sections.map(({ key, title, info, image, bg, btn, imageLeft }) => (
@@ -235,6 +239,7 @@ const Products = () => {
                       src={image}
                       alt={title}
                       className="rounded object-cover w-full h-48 md:h-56"
+                      loading="lazy"
                     />
                   </div>
                   <div className="w-full md:w-2/3 text-left">
@@ -253,6 +258,7 @@ const Products = () => {
                       src={image}
                       alt={title}
                       className="rounded object-cover w-full h-48 md:h-56"
+                      loading="lazy"
                     />
                   </div>
                 </>

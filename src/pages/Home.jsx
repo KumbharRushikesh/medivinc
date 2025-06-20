@@ -4,6 +4,7 @@ import { Navigation, Pagination, Autoplay, Keyboard } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
+import LazyBackground from "../components/LazyBackground";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -64,14 +65,14 @@ const Home = () => {
 
 
   const brands = [
-  "Medfol Tb",
-  "Argiplus Schate",
-  "Dydrovinc 10 TB",
-  "Levocool - M Tb",
-  "Kinclav 625 Tb",
-  "Medcepo 200 Tb",
-  "Brzole DSR Cap"
-];
+    "Medfol Tb",
+    "Argiplus Schate",
+    "Dydrovinc 10 TB",
+    "Levocool - M Tb",
+    "Kinclav 625 Tb",
+    "Medcepo 200 Tb",
+    "Brzole DSR Cap"
+  ];
 
 
   return (
@@ -102,45 +103,36 @@ const Home = () => {
           className="group rounded-lg overflow-hidden"
         >
           <SwiperSlide>
-            <div
-              className="relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center text-white"
-              style={{ backgroundImage: `url('/images/medical1.png')` }}
-            >
+            <LazyBackground src="/images/medical1.png">
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
                 <h3 className="text-2xl font-bold mb-2">Who We Are</h3>
                 <p className="max-w-xl text-center">
                   We are MediVinc Healthcare Improving health, enriching lives: Our mission, our passion.
-
                 </p>
               </div>
-            </div>
+            </LazyBackground>
           </SwiperSlide>
 
           <SwiperSlide>
-            <div
-              className="relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center text-white"
-              style={{ backgroundImage: `url('/images/medicines.png')` }}
-            >
+            <LazyBackground src="/images/medicines.png">
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
                 <h3 className="text-2xl font-bold mb-2">Our Mission</h3>
                 <p className="max-w-xl text-center">
                   To bridge the gap by identifying and addressing unmet consumer needs and thus creating value for all stakeholders.
                 </p>
               </div>
-            </div>
+            </LazyBackground>
           </SwiperSlide>
 
           <SwiperSlide>
-            <div
-              className="relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center text-white"
-              style={{ backgroundImage: `url('/images/medical.png')` }}
-            >
+             <LazyBackground src="/images/medical.png">
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
                 <h3 className="text-2xl font-bold mb-2">Why Choose Us</h3>
                 <p className="max-w-xl text-center">
-                  Trust our expertise for innovative healthcare solutions, backed by top-notch products that prioritize patient care and wellbeing. Our commitment to quality and excellence sets us apart.</p>
+                  Trust our expertise for innovative healthcare solutions, backed by top-notch products that prioritize patient care and wellbeing. Our commitment to quality and excellence sets us apart.
+                </p>
               </div>
-            </div>
+            </LazyBackground>
           </SwiperSlide>
         </Swiper>
 
@@ -234,24 +226,24 @@ const Home = () => {
           </div>
         </div>
 
-<div className="px-4 py-16 bg-gradient-to-br from-blue-100 via-white to-blue-100 rounded-xl text-center overflow-hidden">
-      <h2 className="text-3xl sm:text-4xl font-extrabold mb-10 text-blue-900 drop-shadow-lg">🌟 Our Leading Brands</h2>
+        <div className="px-4 py-16 bg-gradient-to-br from-blue-100 via-white to-blue-100 rounded-xl text-center overflow-hidden">
+          <h2 className="text-3xl sm:text-4xl font-extrabold mb-10 text-blue-900 drop-shadow-lg">🌟 Our Leading Brands</h2>
 
-      <div className="relative w-full overflow-hidden">
-        <div className="flex w-max animate-slide space-x-4 px-2 sm:px-4">
-          {[...brands, ...brands].map((brand, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-xl border border-blue-100 hover:border-blue-300 rounded-xl px-6 py-4 min-w-[180px] sm:min-w-[200px] hover:scale-105 transition-all duration-300 hover:shadow-blue-200"
-            >
-              <p className="text-blue-800 font-semibold text-sm sm:text-base tracking-wide">{brand}</p>
+          <div className="relative w-full overflow-hidden">
+            <div className="flex w-max animate-slide space-x-4 px-2 sm:px-4">
+              {[...brands, ...brands].map((brand, index) => (
+                <div
+                  key={index}
+                  className="bg-white shadow-xl border border-blue-100 hover:border-blue-300 rounded-xl px-6 py-4 min-w-[180px] sm:min-w-[200px] hover:scale-105 transition-all duration-300 hover:shadow-blue-200"
+                >
+                  <p className="text-blue-800 font-semibold text-sm sm:text-base tracking-wide">{brand}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
 
-      {/* Inline animation keyframes */}
-      <style>{`
+          {/* Inline animation keyframes */}
+          <style>{`
         @keyframes slide {
           0% { transform: translateX(0); }
           100% { transform: translateX(-50%); }
@@ -260,7 +252,7 @@ const Home = () => {
           animation: slide 25s linear infinite;
         }
       `}</style>
-    </div>
+        </div>
 
 
 
