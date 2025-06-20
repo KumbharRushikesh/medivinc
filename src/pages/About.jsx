@@ -276,30 +276,31 @@ const About = () => {
 
 
       {/* Timeline / History Section */}
-        <div
-  id="history"
-  className="scroll-mt-24 bg-white rounded-lg shadow-lg px-6 py-12 mt-10 relative"
->
-  <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-300 transform -translate-x-1/2" />
-
-  <h2 className="text-3xl font-extrabold text-center text-cyan-800 mb-10">
+    <div id="history" className="scroll-mt-24 mt-12 relative">
+  {/* ✅ Heading stays OUTSIDE the timeline */}
+  <h2 className="text-3xl font-extrabold text-center text-cyan-800 mb-12 z-10 relative">
     Our Company Journey
   </h2>
 
-  <div className="space-y-12">
-    {timelineData.map((item, index) => (
-  <TimelineBlock2
-    key={item.year}
-    year={item.year}
-    iconKey={item.iconKey}
-    title={item.title}
-    description={item.description}
-    side={index % 2 === 0 ? "left" : "right"}  // 👈 use index, NOT even/odd year
-  />
-))}
+  {/* ✅ Timeline content + vertical line are in here */}
+  <div className="relative">
+    {/* This is the vertical line — now it only spans the timeline blocks */}
+    <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-300 transform -translate-x-1/2 z-0" />
 
+    {/* Timeline items */}
+    {timelineData.map((item, index) => (
+      <TimelineBlock2
+        key={item.year}
+        year={item.year}
+        iconKey={item.iconKey}
+        title={item.title}
+        description={item.description}
+        side={index % 2 === 0 ? "left" : "right"}
+      />
+    ))}
   </div>
 </div>
+
 
         <div
           id="Strength"
