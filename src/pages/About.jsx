@@ -13,6 +13,8 @@ import banner1 from "../Images/Banner1.webp";
 import banner2 from "../Images/productbaner.webp";
 import banner3 from "../Images/productbaner.webp";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import TimelineBlock2 from "../components/TimelineBlock2";
+
 
 const TimelineBlock = ({ year, icon, description, isUp }) => {
   return (
@@ -56,15 +58,7 @@ const StatsBlock = ({ emoji, number, label, delay }) => (
 
 
 const About = () => {
-  const timelineData = [
-    { year: "2010", icon: "\u23F0", description: "Adapt it to your needs and capture your audience's attention.", isUp: false },
-    { year: "2020", icon: "\u{1F464}", description: "Adapt it to your needs and capture your audience's attention.", isUp: false },
-    { year: "2030", icon: "\u{1F91D}", description: "Adapt it to your needs and capture your audience's attention.", isUp: false },
-    { year: "2040", icon: "\u2699\uFE0F", description: "Adapt it to your needs and capture your audience's attention.", isUp: false },
-    { year: "2020", icon: "\u{1F464}", description: "Adapt it to your needs and capture your audience's attention.", isUp: false },
-    { year: "2030", icon: "\u{1F91D}", description: "Adapt it to your needs and capture your audience's attention.", isUp: false },
-  ];
-
+  
   const location = useLocation();
   useEffect(() => {
     if (location.hash) {
@@ -74,6 +68,16 @@ const About = () => {
       }
     }
   }, [location]);
+
+ const timelineData = [
+  { year: "2019", iconKey: "Pill", title: "Founded", description: "Started with a goal to make medicine accessible." },
+  { year: "2020", iconKey: "Stethoscope", title: "App Launch", description: "Our first medical tracking app released." },
+  { year: "2021", iconKey: "Network", title: "Pharmacy Partners", description: "Over 50+ pharmacy collaborations." },
+  { year: "2022", iconKey: "Pill", title: "Expansion", description: "Reached 3 countries across South Asia." },
+  { year: "2023", iconKey: "Stethoscope", title: "AI Prescriptions", description: "Launched smart prescription AI." },
+  { year: "2024", iconKey: "Network", title: "Top Rated", description: "Awarded Top MedTech Platform in India." },
+];
+
 
   return (
     <>
@@ -271,24 +275,31 @@ const About = () => {
         </div>
 
 
-        <div id="history" className="scroll-mt-24 bg-white rounded-lg shadow-lg p-6 mt-10 gap-6 font-sans" hidden>
+      {/* Timeline / History Section */}
+        <div
+  id="history"
+  className="scroll-mt-24 bg-white rounded-lg shadow-lg px-6 py-12 mt-10 relative"
+>
+  <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-300 transform -translate-x-1/2" />
 
-          <motion.h2
-            initial={{ opacity: 0, y: -40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-3xl font-extrabold text-center mb-6 text-cyan-600"
-          >
-            Medivinc Journey
-          </motion.h2>
+  <h2 className="text-3xl font-extrabold text-center text-cyan-800 mb-10">
+    Our Company Journey
+  </h2>
 
-          <div className="flex flex-wrap justify-center items-center px-4 gap-10 mb-6">
-            {timelineData.map((item, index) => (
-              <TimelineBlock key={index} {...item} />
-            ))}
-          </div>
+  <div className="space-y-12">
+    {timelineData.map((item, index) => (
+  <TimelineBlock2
+    key={item.year}
+    year={item.year}
+    iconKey={item.iconKey}
+    title={item.title}
+    description={item.description}
+    side={index % 2 === 0 ? "left" : "right"}  // 👈 use index, NOT even/odd year
+  />
+))}
 
-        </div>
+  </div>
+</div>
 
         <div
           id="Strength"

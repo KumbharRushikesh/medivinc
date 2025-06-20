@@ -1,0 +1,129 @@
+<!-- src/assets/line.svg -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" 
+     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 1190.55 841.89" style="enable-background:new 0 0 1190.55 841.89;" 
+     xml:space="preserve">
+  <defs>
+    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" 
+                    x1="1143.4236" y1="420.6431" x2="45.7097" y2="420.6431" 
+                    gradientTransform="matrix(1 3.251739e-03 -3.251739e-03 1 2.0875 -1.8201)">
+      <stop offset="0" style="stop-color:#2EC4CF"/>
+      <stop offset="0.7532" style="stop-color:#0A4366"/>
+      <stop offset="1" style="stop-color:#0B4462"/>
+    </linearGradient>
+  </defs>
+  <path fill="none" stroke="url(#SVGID_1_)" stroke-width="14" stroke-miterlimit="10"
+        d="M46.63,372.29l160.1,1.63c3.04,0.03,5.96,1.22,8.16,3.34l93.16,89.7c4.67,4.5,12.09,4.44,16.69-0.13
+        l96.95-96.32c4.68-4.65,12.23-4.62,16.88,0.05l96.18,96.81c4.63,4.66,12.15,4.7,16.83,0.1l93.54-91.96
+        c4.6-4.52,11.95-4.57,16.61-0.12l94.1,89.83c4.61,4.4,11.86,4.4,16.47,0.01l94.43-89.95c4.8-4.57,12.41-4.36,16.94,0.49l89.56,95.66
+        c2.27,2.42,5.45,3.79,8.77,3.78l161.92-0.75"/>
+</svg>
+
+
+
+
+        <div id="history" className={`scroll-mt-24 bg-white rounded-lg shadow-lg p-6 mt-10 gap-6 font-sans ${styles.history}`}>
+
+          {/* <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-3xl font-extrabold text-center mb-6 text-cyan-600"
+        >
+          Medivinc Journey
+        </motion.h2>
+
+        <div className="flex flex-wrap justify-center items-center px-4 gap-10 mb-6">
+          {timelineData.map((item, index) => (
+            <TimelineBlock key={index} {...item} />
+          ))}
+        </div> */}
+
+
+          <div className="relative mx-auto">
+
+
+            <div className="inset-0 z-0 max-sm:rotate-90 max-sm:w-[50px] max-sm:h-[75vh] max-sm:mx-auto max-sm:origin-center">
+
+              <LineSVG style={{ width: '100%', height: 'auto' }} />
+            </div>
+            <div>
+              <div className={styles.diamondwrapper}>
+                <div className={`w-32 h-32 border-[10px] border-[#0B4462] bg-transparent flex items-center justify-center ${styles.diamond}`} style={{ borderColor: '#092E47' }}>
+                  <div className={`text-[#000] text-center ${styles.contentRotate}`}>
+                    <div className="text-2xl font-bold">2010</div>
+                    <div className="text-lg">⏰</div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.diamondwrapper1}>
+                <div className={`w-32 h-32 border-[10px] border-[#0B4462] bg-transparent flex items-center justify-center ${styles.diamond}`} style={{ borderColor: '#0B4462' }}>
+                  <div className={`text-[#000] text-center ${styles.contentRotate}`}>
+                    <div className="text-2xl font-bold">2010</div>
+                    <div className="text-lg">⏰</div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.diamondwrapper2}>
+                <div className={`w-32 h-32 border-[10px] border-[#0B4462] bg-transparent flex items-center justify-center ${styles.diamond}`} style={{ borderColor: '#0A4366' }}>
+                  <div className={`text-[#000] text-center ${styles.contentRotate}`}>
+                    <div className="text-2xl font-bold">2010</div>
+                    <div className="text-lg">⏰</div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.diamondwrapper3}>
+                <div className={`w-32 h-32 border-[10px] border-[#0B4462] bg-transparent flex items-center justify-center ${styles.diamond}`} style={{ borderColor: '#0AA3B8' }}>
+                  <div className={`text-[#000] text-center ${styles.contentRotate}`}>
+                    <div className="text-2xl font-bold">2010</div>
+                    <div className="text-lg">⏰</div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.diamondwrapper4}>
+                <div className={`w-32 h-32 border-[10px] border-[#0B4462] bg-transparent flex items-center justify-center ${styles.diamond}`} style={{ borderColor: '#2DB6C7' }}>
+                  <div className={`text-[#000] text-center ${styles.contentRotate}`}>
+                    <div className="text-2xl font-bold">2010</div>
+                    <div className="text-lg">⏰</div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.diamondwrapper5}>
+                <div className={`w-32 h-32 border-[10px] border-[#0B4462] bg-transparent flex items-center justify-center ${styles.diamond}`} style={{ borderColor: '#2EC4CF' }}>
+                  <div className={`text-[#000] text-center ${styles.contentRotate}`}>
+                    <div className="text-2xl font-bold">2010</div>
+                    <div className="text-lg">⏰</div>
+                  </div>
+                </div>
+              </div>
+              <div className={styles.squareWrapper}>
+                <div className="w-32 h-32 flex items-center justify-center">
+                  <div className="text-center text-black">
+                    <div className="text-xl font-semibold">Your Text</div>
+                    <div className="text-sm">Additional Info</div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+ <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="text-3xl font-extrabold text-center mb-6 text-cyan-600"
+        >
+          Medivinc Journey
+        </motion.h2>
+
+        <div className="flex flex-wrap justify-center items-center px-4 gap-10 mb-6">
+          {timelineData.map((item, index) => (
+            <TimelineBlock key={index} {...item} />
+          ))}
+        </div>
