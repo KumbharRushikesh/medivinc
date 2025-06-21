@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import banneImg from "../Images/productbaner.png";
+import banneImg from "../Images/productbaner.webp";
 import SectionWrapper from "../components/SectionWrapper";
-import gynacImg from "../Images/gynac.jpg";
-import pediatricsImg from "../Images/pediatrics.jpg";
-import orthoImg from "../Images/ortho.jpg";
-import InjectableImg from "../Images/Injectable.jpg";
-import GeneralImg from "../Images/genral.jpg";
+import gynacImg from "../Images/gynac.webp";
+import pediatricsImg from "../Images/pediatrics.webp";
+import orthoImg from "../Images/ortho.webp";
+import InjectableImg from "../Images/Injectable.webp";
+import GeneralImg from "../Images/genral.webp";
 import { useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 

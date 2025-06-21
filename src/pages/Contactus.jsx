@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import banneImg from "../Images/productbaner.png";
+import banneImg from "../Images/productbaner.webp";
 import emailjs from "@emailjs/browser";
 import { Helmet } from "react-helmet-async";
 

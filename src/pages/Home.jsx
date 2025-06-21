@@ -5,6 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import LazyBackground from "../components/LazyBackground";
+import banner1 from "../Images/medical1.webp";
+import banner2 from "../Images/medicines.webp";
+import banner3 from "../Images/medical.webp";
+import purpose from "../Images/purpose1.webp";
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -41,25 +46,25 @@ const Home = () => {
       name: "Dr. Anjali Mehra",
       designation: "Chief Medical Officer",
       contact: "+91-9876543210",
-      image: '/images/dummy_profile_img.png',
+      image: '../Images/dummy_profile_img.png',
     },
     {
       name: "Mr. Rajiv Sharma",
       designation: "Managing Director",
       contact: "+91-9988776655",
-      image: "/images/dummy_profile_img.png",
+      image: "../Images/dummy_profile_img.png",
     },
     {
       name: "Ms. Neha Kapoor",
       designation: "Head of Operations",
       contact: "+91-9123456780",
-      image: "/images/dummy_profile_img.png",
+      image: "../Images/dummy_profile_img.png",
     },
     {
       name: "Dr. Arvind Rao",
       designation: "Medical Advisor",
       contact: "+91-9011223344",
-      image: "/images/dummy_profile_img.png",
+      image: "../Images/dummy_profile_img.png",
     },
   ];
 
@@ -103,7 +108,7 @@ const Home = () => {
           className="group rounded-lg overflow-hidden"
         >
           <SwiperSlide>
-            <LazyBackground src="/images/medical1.png">
+            <LazyBackground src={banner1}>
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
                 <h3 className="text-2xl font-bold mb-2">Who We Are</h3>
                 <p className="max-w-xl text-center">
@@ -114,7 +119,7 @@ const Home = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-            <LazyBackground src="/images/medicines.png">
+            <LazyBackground src={banner2}>
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
                 <h3 className="text-2xl font-bold mb-2">Our Mission</h3>
                 <p className="max-w-xl text-center">
@@ -125,7 +130,7 @@ const Home = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-             <LazyBackground src="/images/medical.png">
+             <LazyBackground src={banner3}>
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
                 <h3 className="text-2xl font-bold mb-2">Why Choose Us</h3>
                 <p className="max-w-xl text-center">
@@ -138,7 +143,7 @@ const Home = () => {
 
         <div className="mt-10 relative w-full rounded-xl overflow-hidden shadow-lg">
           <img
-            src="/images/purpose1.png"
+            src={purpose}
             alt="Our Purpose"
             loading="lazy"
             className="w-full h-80 md:h-[30rem] object-cover"

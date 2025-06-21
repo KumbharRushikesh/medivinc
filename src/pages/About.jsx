@@ -9,37 +9,11 @@ import "swiper/css/pagination";
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import SectionWrapper from "../components/SectionWrapper";
-import banner1 from "../Images/Banner1.webp";
-import banner2 from "../Images/productbaner.webp";
-import banner3 from "../Images/productbaner.webp";
+import banner1 from "../Images/new4.webp";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import TimelineBlock2 from "../components/TimelineBlock2";
 import logo from '../Images/medivincLogo.png';
-
-
-const TimelineBlock = ({ year, icon, description, isUp }) => {
-  return (
-    <motion.div
-      className={`flex flex-col items-center mx-4 ${isUp ? "mt-0" : "mt-16"}`}
-      initial={{ opacity: 0, y: isUp ? -50 : 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-    >
-      <div className="relative">
-        <div className="w-24 h-24 bg-white border-4 border-cyan-600 rotate-45 flex items-center justify-center shadow-lg">
-          <div className="-rotate-45 text-center">
-            <div className="text-lg font-bold">{year}</div>
-            <div className="text-xl">{icon}</div>
-          </div>
-        </div>
-        <div className="mt-4 w-36 text-center">
-          <div className="font-semibold mb-1">Text Here</div>
-          <div className="text-sm text-gray-500">{description}</div>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
+import descpic from '../Images/description.webp';
 
 const StatsBlock = ({ emoji, number, label, delay }) => (
   <motion.div
@@ -125,7 +99,7 @@ const About = () => {
       <SectionWrapper title="About Us">
         <div
           className="relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center rounded-lg overflow-hidden"
-          style={{ backgroundImage: `url('/Images/new4.jpg')` }} // replace with your banner image path
+          style={{ backgroundImage: `url(${banner1})` }} // replace with your banner image path
         >
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6 text-white space-y-4">
             <img
@@ -146,61 +120,7 @@ const About = () => {
         </div>
 
 
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
-          spaceBetween={30}
-          slidesPerView={1}
-          navigation
-          pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
-          loop={true}
-          className="hidden rounded-lg overflow-hidden"
-        >
-          <SwiperSlide>
-            <div
-              className="hidden relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center text-white"
-              style={{ backgroundImage: `url(${banner1})` }}
-            >
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
-                <h3 className="text-2xl font-bold mb-2">Who We Are</h3>
-                <p className="max-w-xl text-center">
-                  A team of expert accountants helping your business grow with precision and integrity.
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div
-              className="hidden relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center text-white"
-              style={{ backgroundImage: `url(${banner2})` }}
-            >
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
-                <h3 className="text-2xl font-bold mb-2">Our Mission</h3>
-                <p className="max-w-xl text-center">
-                  To simplify finance for our clients by offering clear, honest, and expert solutions.
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div
-              className="hidden relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center text-white"
-              style={{ backgroundImage: `url(${banner3})` }}
-            >
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6">
-                <h3 className="text-2xl font-bold mb-2">Why Choose Us</h3>
-                <p className="max-w-xl text-center">
-                  Personalized service, transparent pricing, and expert advice trusted by hundreds.
-                </p>
-              </div>
-            </div>
-          </SwiperSlide>
-        </Swiper>
-
-
-
+      
         <div className="bg-white rounded-lg shadow-lg p-6 mt-10 flex flex-col md:flex-row items-start gap-6 font-sans">
           {/* Medical Company Description on the left */}
           <div className="w-full md:w-1/2 text-gray-800 space-y-4 text-justify">
@@ -224,7 +144,7 @@ const About = () => {
           {/* Image on the right with description below */}
           <div className="w-full md:w-1/2 flex flex-col items-start space-y-4">
             <img
-              src="/images/description.webp"
+              src={descpic}
               alt="Medical professionals"
               className="rounded-lg shadow-md w-full h-[44vh] object-cover"
               loading="lazy"
