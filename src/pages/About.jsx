@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import SectionWrapper from "../components/SectionWrapper";
 import banner1 from "../Images/new4.webp";
-import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Helmet } from "react-helmet-async";
 import TimelineBlock2 from "../components/TimelineBlock2";
 import logo from '../Images/medivincLogo.png';
 import descpic from '../Images/description.webp';
