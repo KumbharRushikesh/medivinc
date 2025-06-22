@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from '../Images/medivincLogo.png';
 
 const Navbar = () => {
@@ -24,18 +24,20 @@ const Navbar = () => {
     setAboutOpen(false);
     setproductOpen(false);
   };
+  const navigate = useNavigate();
+
 
   return (
     <nav className="bg-white border-b border-gray-200 shadow-lg p-5 flex flex-col md:flex-row justify-between items-center sticky top-0 z-50">
       <div className="flex justify-between w-full md:w-auto items-center">
         <Link to="/">
-        <img
-          src={logo} // Adjust path based on actual public/static file structure
-          alt="MediVinc Logo"
-          className="h-12 w-auto" // Adjust height/width as needed
-        />
+          <img
+            src={logo} // Adjust path based on actual public/static file structure
+            alt="MediVinc Logo"
+            className="h-12 w-auto" // Adjust height/width as needed
+          />
         </Link>
-        
+
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-gray-700 focus:outline-none"
@@ -48,9 +50,8 @@ const Navbar = () => {
 
       {/* Main Links */}
       <div
-        className={`${
-          menuOpen ? "block" : "hidden"
-        } md:flex md:items-center md:justify-center md:gap-8 px-4 pb-4 md:pb-0 md:px-0 w-full md:w-auto`}
+        className={`${menuOpen ? "block" : "hidden"
+          } md:flex md:items-center md:justify-center md:gap-8 px-4 pb-4 md:pb-0 md:px-0 w-full md:w-auto`}
       >
         <div className="flex flex-col md:flex-row gap-6 mt-4 md:mt-0 text-base font-medium text-gray-700">
           <Link className="hover:text-blue-800" to="/" onClick={closeMobileMenu}>Home</Link>
@@ -73,12 +74,24 @@ const Navbar = () => {
 
             {/* Submenu */}
             <div
-              className={`${
-                aboutOpen ? "block" : "hidden"
-              } md:group-hover:block md:absolute md:top-full md:left-0 bg-white md:min-w-[10rem] rounded-md mt-2 md:mt-0 shadow-md z-40`}
+              className={`${aboutOpen ? "block" : "hidden"
+                } md:group-hover:block md:absolute md:top-full md:left-0 bg-white md:min-w-[10rem] rounded-md mt-2 md:mt-0 shadow-md z-40`}
               onClick={closeMobileMenu}
             >
-              <Link to="/about" className="block px-4 py-2 hover:bg-gray-100">About Us</Link>
+              <Link
+                to="/about"
+                className="block px-4 py-2 hover:bg-gray-100"
+                onClick={(e) => {
+                  if (window.location.pathname === "/about") {
+                    e.preventDefault(); // stop default
+                    navigate("/about"); // ✅ updates URL and removes hash
+                    window.scrollTo({ top: 0, behavior: "smooth" }); // ✅ scroll to top
+                  }
+                }}
+              >
+                About Us
+              </Link>
+
               <Link to="/about#aboutcompany" className="block px-4 py-2 hover:bg-gray-100">Company Info</Link>
               <Link to="/about#Vision-Mission" className="block px-4 py-2 hover:bg-gray-100">Vision & Mission</Link>
               <Link to="/about#history" className="block px-4 py-2 hover:bg-gray-100">Our History</Link>
@@ -91,7 +104,7 @@ const Navbar = () => {
           {/* Product with submenu */}
 
           <div className="relative group">
-             <button
+            <button
               onClick={() => {
                 if (window.innerWidth < 768) {
                   setproductOpen(!productOpen);
@@ -105,9 +118,8 @@ const Navbar = () => {
               </svg>
             </button>
             <div
-              className={`${
-                productOpen ? "block" : "hidden"
-              } md:group-hover:block md:absolute md:top-full md:left-0 bg-white md:min-w-[10rem] rounded-md mt-2 md:mt-0 shadow-md z-40`}
+              className={`${productOpen ? "block" : "hidden"
+                } md:group-hover:block md:absolute md:top-full md:left-0 bg-white md:min-w-[10rem] rounded-md mt-2 md:mt-0 shadow-md z-40`}
               onClick={closeMobileMenu}
             >
               <Link to="/products" className="block px-4 py-2 hover:bg-gray-100">Prime Products</Link>

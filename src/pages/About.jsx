@@ -36,22 +36,55 @@ const About = () => {
   
   const location = useLocation();
   useEffect(() => {
-    if (location.hash) {
+  if (location.hash) {
+    setTimeout(() => {
       const element = document.querySelector(location.hash);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    }
-  }, [location]);
+    }, 100);
+  }
+}, [location.hash]);
 
  const timelineData = [
-  { year: "2019", iconKey: "Pill", title: "Founded", description: "Started with a goal to make medicine accessible." },
-  { year: "2020", iconKey: "Stethoscope", title: "App Launch", description: "Our first medical tracking app released." },
-  { year: "2021", iconKey: "Network", title: "Pharmacy Partners", description: "Over 50+ pharmacy collaborations." },
-  { year: "2022", iconKey: "Pill", title: "Expansion", description: "Reached 3 countries across South Asia." },
-  { year: "2023", iconKey: "Stethoscope", title: "AI Prescriptions", description: "Launched smart prescription AI." },
-  { year: "2024", iconKey: "Network", title: "Top Rated", description: "Awarded Top MedTech Platform in India." },
+  {
+    year: "1999",
+    iconKey: "Stethoscope",
+    title: "Pharma Journey Began",
+    description: "Started our journey in the pharmaceutical industry.",
+  },
+  {
+    year: "2021",
+    iconKey: "Network",
+    title: "Company Established",
+    description: "MediVinc Healthcare Private Limited was formally incorporated.",
+  },
+  {
+    year: "2022",
+    iconKey: "Pill",
+    title: "Major Launch",
+    description: "Started with 36 products and 4 specialized divisions.",
+  },
+  {
+    year: "2024",
+    iconKey: "Stethoscope",
+    title: "Gynac Entry",
+    description: "Entered the gynecology product segment with focus and scale.",
+  },
+  {
+    year: "2026",
+    iconKey: "Pill",
+    title: "Upcoming Derma Launch",
+    description: "Planning to expand into dermatology product range.",
+  },
+  {
+    year: "2030",
+    iconKey: "Network",
+    title: "Global Expansion",
+    description: "Aiming to grow into international markets and serve globally.",
+  },
 ];
+
 
 
   return (
@@ -121,7 +154,7 @@ const About = () => {
 
 
       
-        <div className="bg-white rounded-lg shadow-lg p-6 mt-10 flex flex-col md:flex-row items-start gap-6 font-sans">
+        <div id="aboutcompany" className="bg-white rounded-lg shadow-lg p-6 mt-10 flex flex-col md:flex-row items-start gap-6 font-sans">
           {/* Medical Company Description on the left */}
           <div className="w-full md:w-1/2 text-gray-800 space-y-4 text-justify">
             <p style={{ textIndent: '30px' }}>

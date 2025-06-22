@@ -10,10 +10,12 @@ import Login from "./pages/Login";
 import AllProducts from "./pages/AllProducts";
 import Footer from "./components/Footer";
 import { HelmetProvider } from "react-helmet-async";
+import ScrollToTop from "../src/components/ScrollToTop";
 
 const App = () => (
   <HelmetProvider>
   <Router>
+    <ScrollToTop />
     <Navbar />
     <Routes>
       <Route path="/" element={<Home />} />

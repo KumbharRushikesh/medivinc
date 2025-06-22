@@ -75,8 +75,8 @@ const Home = () => {
     "Dydrovinc 10 TB",
     "Levocool - M Tb",
     "Kinclav 625 Tb",
-    "Medcepo 200 Tb",
-    "Brzole DSR Cap"
+    "Med m fort",
+    "Med f fort"
   ];
 
 
