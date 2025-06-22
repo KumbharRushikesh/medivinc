@@ -12,7 +12,6 @@ import { Helmet } from "react-helmet-async";
 
 
 const Products = () => {
-  const [isAdmin, setIsAdmin] = useState(false);
   const [productData, setProductData] = useState({});
   const [visibleTables, setVisibleTables] = useState({});
   const [searchQueries, setSearchQueries] = useState({});
@@ -32,8 +31,6 @@ const Products = () => {
   const itemsPerPage = 5;
 
   useEffect(() => {
-    setIsAdmin(localStorage.getItem("isAdmin") === "true");
-
     fetch("/products.json")
       .then((res) => res.json())
       .then((data) => {

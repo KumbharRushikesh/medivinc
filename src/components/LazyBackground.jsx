@@ -5,24 +5,27 @@ const LazyBackground = ({ src, children, className }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect(); // Stop observing once loaded
-        }
-      },
-      { threshold: 0.1 }
-    );
+  const element = ref.current;
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+        observer.disconnect(); // Stop observing once loaded
+      }
+    },
+    { threshold: 0.1 }
+  );
 
-    return () => {
-      if (ref.current) observer.unobserve(ref.current);
-    };
-  }, []);
+  if (element) {
+    observer.observe(element);
+  }
+
+  return () => {
+    if (element) observer.unobserve(element);
+  };
+}, []);
+
 
   return (
     <div
