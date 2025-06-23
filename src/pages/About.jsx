@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Eye, Target, } from 'lucide-react';
 import "swiper/css";
 import "swiper/css/navigation";
@@ -128,29 +127,29 @@ const About = () => {
         </script>
 
       </Helmet>
+       <div className="overflow-x-hidden">
       <SectionWrapper title="About Us">
-        <div
-          className="relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center rounded-lg overflow-hidden"
-          style={{ backgroundImage: `url(${banner1})` }} // replace with your banner image path
-        >
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6 text-white space-y-4">
-            <img
-              src={logo}  
-              alt="MediVinc Logo"
-              className="h-16 md:h-24" 
-              loading="lazy"
-            />
+        <div className="w-full overflow-x-hidden">
+  <div
+    className="relative h-80 md:h-[30rem] lg:h-[30rem] bg-cover bg-center rounded-lg overflow-hidden"
+    style={{ backgroundImage: `url(${banner1})` }}
+  >
+    <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-6 text-white space-y-4">
+      <img
+        src={logo}
+        alt="MediVinc Logo"
+        className="h-16 md:h-24"
+        loading="lazy"
+      />
 
-            {/* Heading */}
-            <h3 className="text-3xl font-bold mb-2">MediVinc</h3>
+      <h3 className="text-3xl font-bold mb-2">MediVinc</h3>
 
-            {/* Subheading Text */}
-            <p className="max-w-xl text-center text-lg">
-              Transforming Healthcare, Transforming Lives
-            </p>
-          </div>
-        </div>
-
+      <p className="max-w-xl text-center text-lg">
+        Transforming Healthcare, Transforming Lives
+      </p>
+    </div>
+  </div>
+</div>
 
       
         <div id="aboutcompany" className="bg-white rounded-lg shadow-lg p-6 mt-10 flex flex-col md:flex-row items-start gap-6 font-sans">
@@ -240,7 +239,7 @@ const About = () => {
   {/* ✅ Timeline content + vertical line are in here */}
   <div className="relative">
     {/* This is the vertical line — now it only spans the timeline blocks */}
-    <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gray-300 transform -translate-x-1/2 z-0" />
+    <div className="absolute left-1/2 top-0 bottom-0 w-[1px] bg-gray-300 -translate-x-1/2 z-0" />
 
     {/* Timeline items */}
     {timelineData.map((item, index) => (
@@ -346,6 +345,7 @@ const About = () => {
         </motion.div>
 
       </SectionWrapper>
+      </div>
     </>
   );
 };

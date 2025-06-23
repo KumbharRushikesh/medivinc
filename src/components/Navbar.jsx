@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import logo from '../Images/medivincLogo.png';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isAdmin, setIsAdmin] = useState(false);
+  // const [isAdmin, setIsAdmin] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [productOpen, setproductOpen] = useState(false);
 
-  useEffect(() => {
-    const loggedIn = localStorage.getItem("isAdmin") === "true";
-    setIsAdmin(loggedIn);
-  }, []);
+  // useEffect(() => {
+  //   const loggedIn = localStorage.getItem("isAdmin") === "true";
+  //   setIsAdmin(loggedIn);
+  // }, []);
 
-  const handleLogout = () => {
-    localStorage.removeItem("isAdmin");
-    setIsAdmin(false);
-    window.location.href = "/";
-  };
+  // const handleLogout = () => {
+  //   localStorage.removeItem("isAdmin");
+  //   setIsAdmin(false);
+  //   window.location.href = "/";
+  // };
 
   const closeMobileMenu = () => {
     setMenuOpen(false);
@@ -133,11 +133,11 @@ const Navbar = () => {
           <Link className="hover:text-blue-800" to="/contactus" onClick={closeMobileMenu}>Contact US</Link>
 
 
-          {isAdmin ? (
+          {/* {isAdmin ? (
             <button onClick={handleLogout} className="hover:text-red-600 text-left">Logout</button>
           ) : (
             <Link className="hover:text-blue-800" to="/login" onClick={closeMobileMenu}>Login</Link>
-          )}
+          )} */}
         </div>
       </div>
     </nav>
