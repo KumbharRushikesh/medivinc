@@ -41,7 +41,7 @@ const Contactus = () => {
     content="Contact MediVinc, MediVinc support, MediVinc email, pharma company contact, healthcare support"
   />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.medivinc.com/contact" />
+  <link rel="canonical" href="https://www.medivinc.com/contactus" />
 
   {/* Open Graph */}
   <meta property="og:title" content="Contact MediVinc Healthcare" />
@@ -49,7 +49,7 @@ const Contactus = () => {
     property="og:description"
     content="Reach out to MediVinc for partnerships, inquiries, or support. Your health is our priority."
   />
-  <meta property="og:url" content="https://www.medivinc.com/contact" />
+  <meta property="og:url" content="https://www.medivinc.com/contactus" />
   <meta property="og:type" content="website" />
   <meta
     property="og:image"
