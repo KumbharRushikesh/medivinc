@@ -103,7 +103,7 @@ const Home = () => {
   <meta property="og:type" content="website" />
   <meta
     property="og:image"
-    content={banneImg}
+    content={banner1}
   />
        <script type="application/ld+json">
           {`
