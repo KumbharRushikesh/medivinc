@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar.jsx";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Vision from "./pages/Vision";
@@ -8,9 +8,9 @@ import Products from "./pages/Products";
 import Contactus from "./pages/Contactus";
 import Login from "./pages/Login";
 import AllProducts from "./pages/AllProducts";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer.jsx";
 import { HelmetProvider } from "react-helmet-async";
-import ScrollToTop from "../src/components/ScrollToTop";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => (
   <HelmetProvider>
