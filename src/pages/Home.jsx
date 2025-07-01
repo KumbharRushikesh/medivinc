@@ -94,14 +94,25 @@ const Home = () => {
         />
         <link rel="canonical" href="https://www.medivinc.com/" />
 
-        <script type="application/ld+json">
+<meta property="og:title" content="Quality Healthcare Solutions in India" />
+  <meta
+    property="og:description"
+    content="Explore MediVinc's focus on gynecology, pediatrics, orthopedics, injectables, and general health products. Affordable, reliable healthcare from a trusted Indian pharmaceutical company."
+  />
+  <meta property="og:url" content="https://www.medivinc.com/" />
+  <meta property="og:type" content="website" />
+  <meta
+    property="og:image"
+    content={banneImg}
+  />
+       <script type="application/ld+json">
           {`
       {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "MediVinc Healthcare Private Limited",
         "url": "https://www.medivinc.com",
-        "logo": "https://medivinc.com/static/media/medivincLogo.cef51650e602f93182b5.png",
+        "logo": "https://medivinc.com/logo512.png",
         "description": "MediVinc Healthcare, founded in 1999, specializes in women's healthcare, metabolic disorders, and pain management.",
         "sameAs": [
           "https://www.facebook.com/medivinc",

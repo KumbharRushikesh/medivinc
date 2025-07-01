@@ -204,6 +204,64 @@ const Products = () => {
   ];
 
   return (
+    <>
+       <Helmet>
+        <title>Our Products - MediVinc Healthcare Pvt Ltd | Brands, Divisions, Pharma</title>
+        <meta
+          name="description"
+          content="Explore MediVinc's wide range of products across women healthcare, metabolic disorders, and pain management. View brands, descriptions, and divisions."
+        />
+        <meta
+          name="keywords"
+          content="MediVinc products, pharma brands, healthcare divisions, women health products, pain relief, metabolism, pharmaceutical"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://www.medivinc.com/products" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="Our Products - MediVinc Healthcare" />
+        <meta
+          property="og:description"
+          content="Discover over 45 products across 4 divisions focusing on quality and innovation in healthcare."
+        />
+        <meta property="og:url" content="https://www.medivinc.com/products" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content={banneImg}
+        />
+
+        {/* Twitter Card */}
+        {/* <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Products - MediVinc Healthcare Pvt Ltd" />
+        <meta
+          name="twitter:description"
+          content="Explore our complete pharma product catalog, tailored to improve healthcare accessibility in India."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.medivinc.com/images/og-banner-products.jpg"
+        /> */}
+
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {`
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MediVinc Healthcare Private Limited",
+        "url": "https://www.medivinc.com",
+        "logo": "https://medivinc.com/logo512.png",
+        "description": "MediVinc Healthcare, founded in 1999, specializes in women's healthcare, metabolic disorders, and pain management.",
+        "sameAs": [
+          "https://www.facebook.com/medivinc",
+          "https://www.linkedin.com/company/medivinc",
+          "https://www.instagram.com/medivinc"
+        ]
+      }
+    `}
+        </script>
+      </Helmet>
     <SectionWrapper title="Our Products">
       <div className="relative w-full h-[300px] sm:h-[500px] flex items-end px-6 pb-6 overflow-hidden">
         <img
@@ -275,6 +333,7 @@ const Products = () => {
         ))}
       </div>
     </SectionWrapper>
+    </>
   );
 };
 

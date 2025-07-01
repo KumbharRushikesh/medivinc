@@ -53,11 +53,11 @@ const Contactus = () => {
   <meta property="og:type" content="website" />
   <meta
     property="og:image"
-    content="https://www.medivinc.com/images/og-contact.jpg"
+    content={banneImg}
   />
 
   {/* Twitter Card */}
-  <meta name="twitter:card" content="summary_large_image" />
+  {/* <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Contact MediVinc Healthcare Pvt Ltd" />
   <meta
     name="twitter:description"
@@ -66,7 +66,24 @@ const Contactus = () => {
   <meta
     name="twitter:image"
     content="https://www.medivinc.com/images/og-contact.jpg"
-  />
+  /> */}
+  <script type="application/ld+json">
+          {`
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MediVinc Healthcare Private Limited",
+        "url": "https://www.medivinc.com",
+        "logo": "https://medivinc.com/logo512.png",
+        "description": "MediVinc Healthcare, founded in 1999, specializes in women's healthcare, metabolic disorders, and pain management.",
+        "sameAs": [
+          "https://www.facebook.com/medivinc",
+          "https://www.linkedin.com/company/medivinc",
+          "https://www.instagram.com/medivinc"
+        ]
+      }
+    `}
+        </script>
 </Helmet>
 
     <div className="min-h-screen flex items-center justify-center bg-black text-white relative">

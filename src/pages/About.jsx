@@ -90,22 +90,22 @@ const About = () => {
       <Helmet>
         <title>About Us - MediVinc Healthcare Pvt Ltd | Women's Health, Metabolic & Pain Care</title>
         <meta name="description" content="Discover MediVinc Healthcare's mission, vision, journey, and values. Since 1999, we have been committed to affordable, quality healthcare for all." />
-        <meta name="keywords" content="About MediVinc, Healthcare Company India, Women’s Health, Metabolic Disorder, Pain Management, Pharma Company India, Mission, Vision, Journey, Values" />
+        <meta name="keywords" content="About MediVinc, Healthcare Company India, Women Health, Metabolic Disorder, Pain Management, Pharma Company India, Mission, Vision, Journey, Values" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://www.medivinc.com/about" />
 
         {/* Open Graph (Facebook, LinkedIn) */}
-        <meta property="og:title" content="About Us - MediVinc Healthcare Pvt Ltd" />
+        {/* <meta property="og:title" content="About Us - MediVinc Healthcare Pvt Ltd" />
         <meta property="og:description" content="Learn about MediVinc's mission to bridge healthcare gaps with innovation and quality in India." />
         <meta property="og:url" content="https://www.medivinc.com/about" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://www.medivinc.com/images/og-banner-about.jpg" />
+        <meta property="og:image" content="https://www.medivinc.com/images/og-banner-about.jpg" /> */}
 
         {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Us - MediVinc Healthcare" />
         <meta name="twitter:description" content="Empowering healthier communities with quality healthcare since 1999." />
-        <meta name="twitter:image" content="https://www.medivinc.com/images/og-banner-about.jpg" />
+        <meta name="twitter:image" content="https://www.medivinc.com/images/og-banner-about.jpg" /> */}
 
         {/* Structured Data */}
         <script type="application/ld+json">
@@ -115,7 +115,7 @@ const About = () => {
         "@type": "Organization",
         "name": "MediVinc Healthcare Private Limited",
         "url": "https://www.medivinc.com",
-        "logo": "https://www.medivinc.com/images/logo.png",
+        "logo": "https://medivinc.com/logo512.png",
         "description": "MediVinc Healthcare, founded in 1999, specializes in women's healthcare, metabolic disorders, and pain management.",
         "sameAs": [
           "https://www.facebook.com/medivinc",
