@@ -11,6 +11,7 @@ import AllProducts from "./pages/AllProducts";
 import Footer from "./components/Footer.jsx";
 import { HelmetProvider } from "react-helmet-async";
 import ScrollToTop from "./components/ScrollToTop";
+import GeminiChatbot from "./components/GeminiChatbot";
 
 const App = () => (
   <HelmetProvider>
@@ -27,6 +28,7 @@ const App = () => (
       <Route path="/login" element={<Login />} />
       <Route path="/allproducts" element={<AllProducts />} />
     </Routes>
+    <GeminiChatbot />
     <Footer />
 
   </Router>

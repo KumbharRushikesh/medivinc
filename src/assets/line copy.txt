@@ -183,3 +183,6 @@
 
 
     { "brand": "Met-Pco Tablets", "description": "METFORMIN HYDROCLORIDE 500 MG + MYO INOSITOL 550 + D-CHIRO INOSITOL 13.8 MG + L METHYLFOLATE 0.5 MG + MECOBALAMIN 750MCG", "division": "Gynac Range" },
+
+
+AIzaSyAsLcDRoEQUvTv-q3VkBlCQgEBmHln4eBg
