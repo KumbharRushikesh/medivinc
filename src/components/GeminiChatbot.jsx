@@ -47,7 +47,15 @@ const GeminiChatbot = () => {
         "Sorry, I couldn't understand.";
 
       const parsed = parseGeminiResponse(responseText);
-      setMessages([...newMessages, parsed]);
+      setMessages([
+        ...newMessages,
+        parsed,
+        {
+          isBot: true,
+          isWarning: true,
+          text: "⚠️ Important: Always use medicines or injections only after consulting a licensed medical professional.",
+        },
+      ]);
     } catch (err) {
       console.error("Error:", err);
       setMessages([
@@ -123,7 +131,11 @@ const GeminiChatbot = () => {
                     : "bg-gray-200 ml-auto text-right"
                 }`}
               >
-                {msg.isFormatted ? (
+                {msg.isWarning ? (
+                  <div className="text-xs text-red-600 italic">
+                    {msg.text}
+                  </div>
+                ) : msg.isFormatted ? (
                   <div>
                     <strong className="block text-base mb-1">💊 {msg.title}</strong>
                     <div><strong>Description:</strong> {msg.description}</div>
